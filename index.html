@@ -35,6 +35,29 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
   --border-pink:rgba(255,36,175,0.22);
 }
 
+/* ── HERO: foto de fondo ── */
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 78%;z-index:0;}
+.hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,247,232,0.97) 0%,rgba(255,247,232,0.93) 22%,rgba(255,238,247,0.66) 40%,rgba(255,230,249,0.16) 58%,rgba(255,247,232,0.42) 82%,rgba(255,247,232,0.96) 95%,var(--bg) 100%);}
+.hero-veil2{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse 78% 46% at 50% 22%,rgba(255,247,232,0.62) 0%,transparent 70%);}
+.hero>*{position:relative;z-index:2;}
+.hero-deco-tl,.hero-deco-tr,.hero-sparkle-1,.hero-sparkle-2,.hero-sparkle-3{z-index:3;}
+
+/* ── GALERIA — RUEDA 3D ── */
+#sgal{padding:52px 0 26px;text-align:center;position:relative;overflow:hidden;}
+.wheel-scene{position:relative;width:100%;height:330px;margin:26px auto 0;perspective:1100px;transform-style:preserve-3d;}
+.wheel-ring{position:absolute;width:100%;height:100%;transform-style:preserve-3d;cursor:grab;}
+.wheel-ring.dragging{cursor:grabbing;}
+.wheel-card{position:absolute;width:168px;height:236px;left:50%;top:50%;margin-left:-84px;margin-top:-118px;
+  border-radius:14px;overflow:hidden;border:2px solid rgba(255,36,175,0.30);
+  box-shadow:0 12px 34px rgba(255,36,175,0.20);background:var(--pink-pale);
+  user-select:none;-webkit-user-select:none;}
+.wheel-card img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;pointer-events:none;}
+.gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;font-weight:500;
+  letter-spacing:2px;color:var(--gold);margin-top:22px;opacity:.9;}
+@media(min-width:420px){.wheel-scene{height:360px;}.wheel-card{width:186px;height:260px;margin-left:-93px;margin-top:-130px;}}
+
 /* ── ENVELOPE ── */
 #envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#FFF7E8;}
 #env-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;z-index:2;}
@@ -384,7 +407,10 @@ footer{padding:52px 20px 64px;text-align:center;}
 <div class="wrap" style="visibility:hidden" id="wrapEl">
 
   <!-- HERO -->
-  <section class="hero" style="padding:60px 28px 70px;">
+  <section class="hero" style="padding:13vh 28px 82px;justify-content:flex-start;">
+    <img class="hero-photo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/hero.jpg" alt="Alia Valeshka" fetchpriority="high">
+    <div class="hero-veil"></div>
+    <div class="hero-veil2"></div>
     <!-- Disco ball -->
     <svg class="hero-deco-tl" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line x1="30" y1="0" x2="30" y2="8" stroke="#B0B0B0" stroke-width="2"/>
@@ -547,6 +573,35 @@ footer{padding:52px 20px 64px;text-align:center;}
         <circle cx="68" cy="93" r="9" fill="rgba(255,255,255,0.65)"/>
       </svg>
     </div>
+  </section>
+
+  <!-- ORNAMENTO -->
+  <div class="orn-wrap rv">
+    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+  </div>
+
+  <!-- GALERIA -->
+  <section id="sgal">
+    <div class="eyebrow rv">Mis Recuerdos</div>
+    <h2 class="sec-title rv">Mis Momentos</h2>
+    <div class="wheel-scene rv" id="wheelScene">
+      <div class="wheel-ring" id="wheelRing">
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g01.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g02.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g03.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g04.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g05.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g06.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g07.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g08.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g09.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g10.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g11.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g12.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g13.jpg" alt="Alia Valeshka" /></div>
+      </div>
+    </div>
+    <p class="gal-hint rv">Arrastra para girar</p>
   </section>
 
   <!-- ORNAMENTO -->
@@ -982,6 +1037,39 @@ function initSparkles(){
   }
   tick(); setInterval(tick,1000);
 }());
+
+/* ── GALERIA — RUEDA 3D ── */
+(function(){
+  var ring=document.getElementById('wheelRing');
+  if(!ring)return;
+  var cards=ring.querySelectorAll('.wheel-card');
+  var n=cards.length;if(!n)return;
+  /* data-src: loading="lazy" nunca dispara en tarjetas con translateZ */
+  cards.forEach(function(c){var im=c.querySelector('img');if(im&&im.dataset.src)im.src=im.dataset.src;});
+  var cw=cards[0].offsetWidth||168;
+  var radius=Math.round((cw/2)/Math.tan(Math.PI/n));
+  cards.forEach(function(card,i){
+    card.style.transform='rotateY('+(360/n*i)+'deg) translateZ('+radius+'px)';
+  });
+  var rot=0,vel=0,isDrag=false,startX=0,startRot=0,lastX=0,rafId=null,auto=true;
+  function setRot(){ring.style.transform='translateZ(-'+radius+'px) rotateY('+rot+'deg)';}
+  setRot();
+  function inertia(){
+    if(isDrag)return;
+    rot+=vel;vel*=0.94;setRot();
+    if(Math.abs(vel)>0.05)rafId=requestAnimationFrame(inertia);
+  }
+  function down(x){isDrag=true;auto=false;ring.classList.add('dragging');startX=x;lastX=x;startRot=rot;vel=0;if(rafId)cancelAnimationFrame(rafId);}
+  function move(x){if(!isDrag)return;rot=startRot+(x-startX)*0.45;vel=(x-lastX)*0.5;lastX=x;setRot();}
+  function up(){if(!isDrag)return;isDrag=false;ring.classList.remove('dragging');rafId=requestAnimationFrame(inertia);}
+  ring.addEventListener('mousedown',function(e){e.preventDefault();down(e.clientX);});
+  window.addEventListener('mousemove',function(e){move(e.clientX);});
+  window.addEventListener('mouseup',up);
+  ring.addEventListener('touchstart',function(e){down(e.touches[0].clientX);},{passive:true});
+  ring.addEventListener('touchmove',function(e){move(e.touches[0].clientX);},{passive:true});
+  ring.addEventListener('touchend',up);
+  (function spin(){if(auto&&!isDrag){rot+=0.12;setRot();}requestAnimationFrame(spin);})();
+})();
 
 /* ── RSVP — Panel de Invitados ── */
 (function(){
