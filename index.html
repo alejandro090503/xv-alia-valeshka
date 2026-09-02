@@ -963,6 +963,7 @@ gsap.registerPlugin(ScrollTrigger);
     var wrap=document.getElementById('wrapEl');
     wrap.style.visibility='visible';
     /* Crossfade: el sobre se desvanece mientras la invitacion aparece debajo */
+    envScreen.style.pointerEvents='none';
     gsap.to(envScreen,{opacity:0,duration:2.4,ease:'power1.inOut',onComplete:function(){
       envScreen.style.display='none';
     }});
@@ -985,6 +986,13 @@ gsap.registerPlugin(ScrollTrigger);
       if(!invitationReady){ invitationReady=true; document.getElementById('wrapEl').style.visibility='visible'; launchPage(); }
     });
   }
+  /* Guard: si el video nunca dispara "ended" (iOS en segundo plano, etc.)
+     el sobre no debe quedarse encima bloqueando el scroll */
+  function safetyReveal(){
+    if(invitationReady)return;
+    var ev=new Event('ended');envVideo.dispatchEvent(ev);
+  }
+  envScreen.addEventListener('click',function(){setTimeout(safetyReveal,12000);});
   envScreen.addEventListener('click',openEnvelope);
   envScreen.addEventListener('touchstart',function(e){e.preventDefault();openEnvelope();},{passive:false});
 }());
