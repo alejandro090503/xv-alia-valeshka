@@ -36,9 +36,9 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 }
 
 /* ── HERO: foto de fondo ── */
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 78%;z-index:0;}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 96%;z-index:0;}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,247,232,0.97) 0%,rgba(255,247,232,0.93) 22%,rgba(255,238,247,0.66) 40%,rgba(255,230,249,0.16) 58%,rgba(255,247,232,0.42) 82%,rgba(255,247,232,0.96) 95%,var(--bg) 100%);}
+  background:linear-gradient(180deg,rgba(255,247,232,0.97) 0%,rgba(255,247,232,0.94) 30%,rgba(255,238,247,0.70) 46%,rgba(255,230,249,0.14) 64%,rgba(255,247,232,0.42) 84%,rgba(255,247,232,0.96) 96%,var(--bg) 100%);}
 .hero-veil2{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:radial-gradient(ellipse 78% 46% at 50% 22%,rgba(255,247,232,0.62) 0%,transparent 70%);}
 .hero>*{position:relative;z-index:2;}
@@ -120,7 +120,7 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .hero-sparkle-2{position:absolute;top:22%;left:6%;width:16px;animation:twinkle4 4s ease-in-out infinite 1s;}
 .hero-sparkle-3{position:absolute;bottom:28%;right:6%;width:18px;animation:twinkle4 3.5s ease-in-out infinite 0.5s;}
 @keyframes twinkle4{0%,100%{opacity:.3;transform:scale(0.7);}50%{opacity:1;transform:scale(1);}}
-.hero-mis{font-family:'Great Vibes',cursive;font-size:42px;color:var(--gold);line-height:1;opacity:0;transform:translateY(18px);}
+.hero-mis{text-shadow:0 1px 12px rgba(255,247,232,0.9);font-family:'Great Vibes',cursive;font-size:42px;color:var(--gold);line-height:1;opacity:0;transform:translateY(18px);}
 .hero-xv{
   font-family:'Playfair Display',serif;font-weight:900;
   font-size:clamp(108px,30vw,140px);color:var(--pink);
@@ -129,9 +129,9 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
   opacity:0;transform:translateY(18px);
 }
 .hero-bow-xv{position:absolute;top:-14px;right:-24px;width:48px;}
-.hero-name{font-family:'Great Vibes',cursive;font-size:clamp(56px,16vw,74px);color:var(--dark);line-height:1;opacity:0;transform:translateY(18px);}
+.hero-name{text-shadow:0 2px 16px rgba(255,247,232,0.95),0 0 40px rgba(255,247,232,0.9);font-family:'Great Vibes',cursive;font-size:clamp(56px,16vw,74px);color:var(--dark);line-height:1;opacity:0;transform:translateY(18px);}
 .hero-sep{width:56px;height:1px;background:linear-gradient(to right,transparent,var(--pink-light),transparent);margin:18px auto;opacity:0;}
-.hero-date{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);opacity:0;}
+.hero-date{text-shadow:0 1px 12px rgba(255,247,232,0.98);font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:6px;text-transform:uppercase;color:var(--gold);opacity:0;}
 
 /* ── ORNAMENTO ── */
 .orn-wrap{display:flex;justify-content:center;padding:6px 0;}
@@ -410,7 +410,7 @@ footer{padding:52px 20px 64px;text-align:center;}
 <div class="wrap" style="visibility:hidden" id="wrapEl">
 
   <!-- HERO -->
-  <section class="hero" style="padding:13vh 28px 82px;justify-content:flex-start;">
+  <section class="hero" style="padding:5vh 28px 82px;justify-content:flex-start;">
     <img class="hero-photo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/hero.jpg" alt="Alia Valeshka" fetchpriority="high">
     <div class="hero-veil"></div>
     <div class="hero-veil2"></div>
