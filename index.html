@@ -36,11 +36,11 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 }
 
 /* ── HERO: foto de fondo ── */
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 96%;z-index:0;}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%;z-index:0;}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,247,232,0.97) 0%,rgba(255,247,232,0.94) 30%,rgba(255,238,247,0.70) 46%,rgba(255,230,249,0.14) 64%,rgba(255,247,232,0.42) 84%,rgba(255,247,232,0.96) 96%,var(--bg) 100%);}
+  background:linear-gradient(180deg,rgba(255,247,232,0.62) 0%,rgba(255,238,247,0.22) 16%,rgba(255,230,249,0.10) 34%,rgba(255,247,232,0.55) 54%,rgba(255,247,232,0.90) 68%,rgba(255,247,232,0.97) 82%,var(--bg) 100%);}
 .hero-veil2{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(ellipse 78% 46% at 50% 22%,rgba(255,247,232,0.62) 0%,transparent 70%);}
+  background:radial-gradient(ellipse 88% 42% at 50% 82%,rgba(255,247,232,0.70) 0%,transparent 72%);}
 .hero>*{position:relative;z-index:2;}
 .hero>.hero-photo{position:absolute;inset:0;z-index:0;}
 .hero>.hero-veil{position:absolute;inset:0;z-index:1;}
@@ -60,6 +60,30 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .gal-hint{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;font-weight:500;
   letter-spacing:2px;color:var(--gold);margin-top:22px;opacity:.9;}
 @media(min-width:420px){.wheel-scene{height:360px;}.wheel-card{width:186px;height:260px;margin-left:-93px;margin-top:-130px;}}
+
+/* ══ RESPLANDOR DE ORO — barrido de luz sobre los titulos ══ */
+@keyframes goldSweep{
+  0%{background-position:200% center}
+  100%{background-position:-200% center}
+}
+.sec-title,.cd-label,.fam-role,.ubic-tipo,.ft-name,.hero-xv,.hero-mis{
+  background-image:linear-gradient(100deg,
+    #8F7434 0%, #A98A45 8%, #C9A456 16%, #D9C07C 24%,
+    #EBDBAA 32%, #C9A456 40%, #A98A45 48%, #8F7434 56%,
+    #A98A45 66%, #C9A456 76%, #D9C07C 86%, #8F7434 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;color:transparent;
+  animation:goldSweep 5.5s linear infinite;
+  padding-left:.34em;padding-right:.34em;
+  margin-left:-.34em;margin-right:-.34em;
+  filter:drop-shadow(0 0 5px rgba(201,164,86,.32));
+}
+/* el icono dentro del rol de familia conserva su tinta */
+.fam-role svg{-webkit-text-fill-color:initial;}
+@media(prefers-reduced-motion:reduce){
+  .sec-title,.cd-label,.fam-role,.ubic-tipo,.ft-name,.hero-xv,.hero-mis{animation:none;background-position:50% center;}
+}
 
 /* ── ENVELOPE ── */
 #envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#FFF7E8;}
@@ -185,6 +209,18 @@ section{padding:52px 28px;}
 .fam-wrap{text-align:center;}
 .fam-block{padding:18px 0;}
 .fam-role{font-family:'Great Vibes',cursive;font-size:40px;color:var(--pink);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:10px;}
+.padrinos-rot{position:relative;min-height:96px;display:flex;align-items:center;justify-content:center;}
+.padrino-item{position:absolute;left:0;right:0;top:50%;transform:translateY(calc(-50% + 8px));
+  opacity:0;transition:opacity .95s ease,transform .95s ease;padding:0 8px;pointer-events:none;}
+.padrino-item.is-on{opacity:1;transform:translateY(-50%);}
+.padrinos-dots{position:absolute;left:0;right:0;bottom:-4px;display:flex;gap:7px;justify-content:center;}
+.padrinos-dots i{width:5px;height:5px;border-radius:50%;background:var(--gold);opacity:.28;transition:opacity .5s,transform .5s;}
+.padrinos-dots i.on{opacity:.95;transform:scale(1.35);}
+@media(prefers-reduced-motion:reduce){
+  .padrinos-rot{min-height:0;display:block;}
+  .padrino-item{position:static;opacity:1;transform:none;display:block;}
+  .padrinos-dots{display:none;}
+}
 .fam-names{font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.95;color:var(--dark);letter-spacing:.5px;}
 .fam-divider{height:1px;background:linear-gradient(to right,transparent,var(--pink-light) 30%,var(--pink-light) 70%,transparent);margin:14px auto;}
 
@@ -333,18 +369,69 @@ footer{padding:52px 20px 64px;text-align:center;}
 .ft-credit{font-family:'Montserrat',sans-serif;font-size:11px;letter-spacing:2px;color:rgba(93,48,32,0.30);margin-top:18px;}
 
 /* ── MUSIC FAB ── */
-.music-fab{
-  position:fixed;bottom:24px;right:20px;z-index:999;
-  width:52px;height:52px;border-radius:50%;cursor:pointer;
-  background:var(--pink);border:2px solid rgba(255,255,255,0.7);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 18px rgba(255,36,175,0.45);
-  animation:fabpulse 2.8s infinite;
-}
-@keyframes fabpulse{
-  0%{box-shadow:0 0 0 0 rgba(255,36,175,0.55),0 4px 18px rgba(255,36,175,0.45);}
-  70%{box-shadow:0 0 0 18px rgba(255,36,175,0),0 4px 18px rgba(255,36,175,0.45);}
-  100%{box-shadow:0 0 0 0 rgba(255,36,175,0),0 4px 18px rgba(255,36,175,0.45);}
+/* ── MUSICA — disco de vinilo ── */
+.vinyl-btn{position:fixed;bottom:22px;right:18px;z-index:999;width:64px;height:64px;border-radius:50%;
+  padding:0;border:none;cursor:pointer;background:transparent;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  box-shadow:0 6px 20px rgba(196,18,111,.32),0 0 0 1px rgba(217,192,124,.35);}
+.vinyl-btn:hover{transform:scale(1.08);}
+.vinyl-spin{width:100%;height:100%;border-radius:50%;position:relative;}
+.vinyl-btn.is-playing .vinyl-spin{animation:vinylSpin 1.8s linear infinite;}
+@keyframes vinylSpin{to{transform:rotate(360deg);}}
+.vinyl-disc{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;
+  background:
+    radial-gradient(circle,#2A1520 4%,transparent 4.5%),
+    radial-gradient(circle,#FFBDE7 0%,#FF24AF 17%,#C4126F 19%,transparent 19.5%),
+    repeating-radial-gradient(circle,
+      transparent 20%,rgba(255,255,255,.06) 20.8%,transparent 21.5%,
+      transparent 24%,rgba(255,255,255,.04) 24.8%,transparent 25.5%,
+      transparent 28%,rgba(255,255,255,.06) 28.8%,transparent 29.5%,
+      transparent 32%,rgba(255,255,255,.04) 32.8%,transparent 33.5%,
+      transparent 36%,rgba(255,255,255,.06) 36.8%,transparent 37.5%,
+      transparent 40%,rgba(255,255,255,.04) 40.8%,transparent 41.5%,
+      transparent 44%,rgba(255,255,255,.06) 44.8%,transparent 45.5%,
+      transparent 48%,rgba(255,255,255,.04) 48.8%,transparent 49.5%,
+      transparent 52%,rgba(255,255,255,.06) 52.8%,transparent 53.5%,
+      transparent 56%,rgba(255,255,255,.04) 56.8%,transparent 57.5%,
+      transparent 60%,rgba(255,255,255,.06) 60.8%,transparent 61.5%,
+      transparent 64%,rgba(255,255,255,.04) 64.8%,transparent 65.5%,
+      transparent 68%,rgba(255,255,255,.06) 68.8%,transparent 69.5%,
+      transparent 72%,rgba(255,255,255,.04) 72.8%,transparent 73.5%,
+      transparent 76%,rgba(255,255,255,.06) 76.8%,transparent 77.5%,
+      transparent 80%,rgba(255,255,255,.04) 80.8%,transparent 81.5%,
+      transparent 84%,rgba(255,255,255,.06) 84.8%,transparent 85.5%,
+      transparent 88%,rgba(255,255,255,.04) 88.8%,transparent 89.5%,
+      transparent 92%,rgba(255,255,255,.06) 92.8%,transparent 93.5%,
+      transparent 96%,rgba(255,255,255,.04) 96.8%,transparent 97.5%
+    ),
+    radial-gradient(circle,#2A1520 0%,#1E0F17 60%,#2A1520 100%);
+  box-shadow:inset 0 0 8px rgba(0,0,0,.45);}
+.vinyl-sheen{position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:linear-gradient(135deg,transparent 30%,rgba(255,255,255,.10) 42%,rgba(255,255,255,.17) 48%,rgba(255,255,255,.10) 54%,transparent 66%);}
+.vinyl-label-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-family:'Great Vibes',cursive;font-size:14px;color:#FFF7E8;text-align:center;line-height:1.05;
+  opacity:.9;pointer-events:none;width:30px;}
+.vinyl-label-text small{font-family:'Montserrat',sans-serif;font-size:5px;letter-spacing:.15em;display:block;margin-top:1px;opacity:.75;}
+.vinyl-hole{position:absolute;top:50%;left:50%;width:6px;height:6px;transform:translate(-50%,-50%);
+  border-radius:50%;background:#2A1520;box-shadow:0 0 0 1.5px rgba(217,192,124,.55);}
+.vinyl-icons{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:18px;height:18px;pointer-events:none;z-index:2;}
+.vinyl-icons svg{width:100%;height:100%;display:block;}
+.ic-pause{display:none;}
+.vinyl-btn.is-playing .ic-play{display:none;}
+.vinyl-btn.is-playing .ic-pause{display:block;}
+.vinyl-btn.is-playing .vinyl-label-text{opacity:0;transition:opacity .3s;}
+.vinyl-btn::after{content:"";position:absolute;inset:-5px;border-radius:50%;
+  border:1px solid var(--gold);opacity:.4;animation:vinylPulse 3s ease-in-out infinite;}
+.vinyl-btn.is-playing::after{animation-duration:1.6s;}
+@keyframes vinylPulse{0%,100%{transform:scale(1);opacity:.4;}50%{transform:scale(1.12);opacity:.05;}}
+.vinyl-tonearm{position:absolute;top:-4px;right:-2px;width:24px;height:34px;transform-origin:top right;
+  transform:rotate(-28deg);transition:transform .6s cubic-bezier(.2,.7,.2,1);pointer-events:none;z-index:1;}
+.vinyl-btn.is-playing .vinyl-tonearm{transform:rotate(-12deg);}
+.vinyl-tonearm-line{position:absolute;top:2px;right:4px;width:2px;height:28px;border-radius:1px;
+  background:linear-gradient(to bottom,#8F7434,#D9C07C 40%,#8F7434);transform:rotate(-5deg);transform-origin:top center;}
+.vinyl-tonearm-head{position:absolute;bottom:0;right:2px;width:5px;height:6px;background:#D9C07C;border-radius:0 0 2px 2px;}
+.vinyl-tonearm-pivot{position:absolute;top:0;right:2px;width:7px;height:7px;border-radius:50%;
+  background:radial-gradient(circle,#F0E3B8,#8F7434);box-shadow:0 1px 3px rgba(0,0,0,.3);}
 }
 
 /* ── PASES ── */
@@ -410,7 +497,7 @@ footer{padding:52px 20px 64px;text-align:center;}
 <div class="wrap" style="visibility:hidden" id="wrapEl">
 
   <!-- HERO -->
-  <section class="hero" style="padding:5vh 28px 82px;justify-content:flex-start;">
+  <section class="hero" style="padding:8vh 28px 7vh;justify-content:flex-end;">
     <img class="hero-photo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/hero.jpg" alt="Alia Valeshka" fetchpriority="high">
     <div class="hero-veil"></div>
     <div class="hero-veil2"></div>
@@ -549,7 +636,13 @@ footer{padding:52px 20px 64px;text-align:center;}
           Mis Padrinos de Honor
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:.5"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
         </div>
-        <div class="fam-names">Hellen Leiva Ramirez<br>Pa&uacute;l Velasquez Porras<br>Victoria Delfina Escudero Pajuelo<br>Jesus Arquimedes S&aacute;nchez Valencia</div>
+        <div class="fam-names padrinos-rot" id="padrinosRot">
+          <span class="padrino-item is-on">Hellen Leiva Ramirez</span>
+          <span class="padrino-item">Pa&uacute;l Velasquez Porras</span>
+          <span class="padrino-item">Victoria Delfina Escudero Pajuelo</span>
+          <span class="padrino-item">Jesus Arquimedes S&aacute;nchez Valencia</span>
+          <div class="padrinos-dots" id="padrinosDots" aria-hidden="true"></div>
+        </div>
       </div>
     </div>
     <!-- Conejito esquina -->
@@ -933,8 +1026,23 @@ footer{padding:52px 20px 64px;text-align:center;}
 </div><!-- /wrap -->
 
 <!-- MUSIC FAB -->
-<button class="music-fab" id="musicFab" aria-label="Reproducir m&uacute;sica">
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+<button class="vinyl-btn" id="musicFab" type="button" aria-label="Reproducir m&uacute;sica de la invitaci&oacute;n">
+  <div class="vinyl-tonearm">
+    <div class="vinyl-tonearm-pivot"></div>
+    <div class="vinyl-tonearm-line"></div>
+    <div class="vinyl-tonearm-head"></div>
+  </div>
+  <div class="vinyl-spin">
+    <div class="vinyl-disc">
+      <div class="vinyl-sheen"></div>
+      <div class="vinyl-label-text">AV<small>2026</small></div>
+      <div class="vinyl-hole"></div>
+    </div>
+  </div>
+  <div class="vinyl-icons">
+    <svg class="ic-play" viewBox="0 0 24 24" fill="#FFF7E8"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="ic-pause" viewBox="0 0 24 24" fill="#FFF7E8"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+  </div>
 </button>
 <audio id="bgAudio" loop preload="none">
   <source src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/audio/xv-alia-valeshka/cancion.mp3" type="audio/mpeg">
@@ -1048,6 +1156,36 @@ function initSparkles(){
   }
   tick(); setInterval(tick,1000);
 }());
+
+/* ── PADRINOS — rotador con fade ── */
+(function(){
+  var wrap=document.getElementById('padrinosRot');
+  if(!wrap)return;
+  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var items=wrap.querySelectorAll('.padrino-item');
+  if(items.length<2)return;
+  var dots=document.getElementById('padrinosDots'),ds=[];
+  for(var i=0;i<items.length;i++){
+    var d=document.createElement('i');
+    if(i===0)d.className='on';
+    dots.appendChild(d);ds.push(d);
+  }
+  var idx=0,visible=true;
+  if(window.IntersectionObserver){
+    new IntersectionObserver(function(es){visible=es[0].isIntersecting;},{threshold:0.15}).observe(wrap);
+  }
+  setInterval(function(){
+    if(!visible)return;
+    items[idx].classList.remove('is-on');
+    ds[idx].classList.remove('on');
+    var next=(idx+1)%items.length;
+    setTimeout(function(){
+      items[next].classList.add('is-on');
+      ds[next].classList.add('on');
+    },1000);
+    idx=next;
+  },3600);
+})();
 
 /* ── GALERIA — RUEDA 3D ── */
 (function(){
@@ -1246,12 +1384,14 @@ audio.volume=0.22;
 fab.addEventListener('click',function(){
   if(audio.paused){
     audio.play().catch(function(){});
-    fab.style.borderColor='rgba(255,255,255,0.9)';
+    fab.classList.add('is-playing');
   } else {
     audio.pause();
-    fab.style.borderColor='';
+    fab.classList.remove('is-playing');
   }
 });
+audio.addEventListener('play',function(){fab.classList.add('is-playing');});
+audio.addEventListener('pause',function(){fab.classList.remove('is-playing');});
 </script>
 </body>
 </html>
