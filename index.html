@@ -36,7 +36,7 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 }
 
 /* ── HERO: foto de fondo ── */
-.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 24%;z-index:0;}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;z-index:0;}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,rgba(255,247,232,0.62) 0%,rgba(255,238,247,0.22) 16%,rgba(255,230,249,0.10) 34%,rgba(255,247,232,0.55) 54%,rgba(255,247,232,0.90) 68%,rgba(255,247,232,0.97) 82%,var(--bg) 100%);}
 .hero-veil2{position:absolute;inset:0;z-index:1;pointer-events:none;
@@ -86,6 +86,104 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 @media(prefers-reduced-motion:reduce){
   .sec-title,.cd-label,.fam-role,.ubic-tipo,.ft-name,.hero-xv,.hero-mis{animation:none;background-position:50% center;}
 }
+
+/* ══ TEMA BALLET ══ */
+@keyframes balletSway{0%,100%{transform:rotate(-3.5deg);}50%{transform:rotate(3.5deg);}}
+@keyframes balletFloat{0%,100%{transform:translateY(0) rotate(-1.5deg);}50%{transform:translateY(-9px) rotate(1.5deg);}}
+@keyframes featherDrift{0%,100%{transform:translateY(0) rotate(-6deg);}33%{transform:translateY(-7px) rotate(4deg);}66%{transform:translateY(4px) rotate(-2deg);}}
+@keyframes noteDrift{0%,100%{transform:translateY(0) rotate(-8deg);opacity:.10;}50%{transform:translateY(-16px) rotate(8deg);opacity:.34;}}
+@keyframes swanGlide{0%,100%{transform:translateX(0);}50%{transform:translateX(7px);}}
+.ballet-sway{transform-origin:42px 5px;animation:balletSway 5.5s ease-in-out infinite;}
+.ballet-float{animation:balletFloat 6.5s ease-in-out infinite;}
+.pluma{animation:featherDrift 7s ease-in-out infinite;}
+.pluma-2{animation-duration:8.5s;animation-delay:.8s;}
+.pluma-3{animation-duration:6.2s;animation-delay:1.4s;}
+.pluma-flip{transform:scaleX(-1);}
+.pluma-flip.pluma{animation-name:featherDrift;}
+.cisne{animation:swanGlide 9s ease-in-out infinite;}
+.cisne-flip{transform:scaleX(-1);}
+/* telón de teatro sutil en el hero */
+.hero-curtain{position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(255,36,175,.10) 0%,transparent 16%,transparent 84%,rgba(255,36,175,.10) 100%),
+    radial-gradient(ellipse 120% 30% at 50% 0%,rgba(255,247,232,.55) 0%,transparent 60%);}
+
+/* ══ ÁLBUM COMPARTIDO ══ */
+#salbum{padding:52px 28px 44px;text-align:center;position:relative;}
+.album-card{position:relative;max-width:360px;margin:26px auto 0;padding:30px 24px 28px;
+  border:1.5px solid rgba(217,192,124,.62);border-radius:6px;
+  background:linear-gradient(140deg,rgba(255,230,249,.62),rgba(255,247,232,.94));
+  box-shadow:0 10px 34px rgba(255,36,175,.10),inset 0 1px 0 rgba(255,255,255,.6);}
+.album-card::before{content:'';position:absolute;inset:8px;border:1px solid rgba(255,36,175,.20);border-radius:3px;pointer-events:none;}
+.album-text{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:500;line-height:1.65;
+  color:var(--text);margin-bottom:22px;position:relative;z-index:1;}
+.album-qr{position:relative;z-index:1;width:186px;height:186px;margin:0 auto 18px;padding:12px;
+  background:#fff;border-radius:10px;box-shadow:0 6px 20px rgba(255,36,175,.16);
+  border:1px solid rgba(217,192,124,.5);}
+.album-qr img{width:100%;height:100%;display:block;image-rendering:pixelated;}
+.album-hint{font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:18px;position:relative;z-index:1;}
+.album-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  min-height:50px;padding:15px 30px;border-radius:50px;border:none;cursor:pointer;
+  background:var(--pink);color:#fff;text-decoration:none;
+  font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  box-shadow:0 6px 22px rgba(255,36,175,.38);transition:transform .22s ease,box-shadow .22s ease;
+  position:relative;z-index:1;}
+.album-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(255,36,175,.46);}
+.album-btn:active{transform:translateY(0);}
+.album-btn svg{width:17px;height:17px;flex:none;}
+@media(prefers-reduced-motion:reduce){
+  .ballet-sway,.ballet-float,.pluma,.cisne{animation:none;}
+}
+
+/* ══ FONDOS TEMÁTICOS DE SECCIÓN (bordes difuminados) ══ */
+#smsg{position:relative;overflow:hidden;}
+#smsg::before{content:"";position:absolute;inset:-2px;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/bg-ballet-3.jpg') center/cover no-repeat;
+  opacity:.34;pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:destination-in;}
+#smsg>*{position:relative;z-index:1;}
+#sfam{position:relative;overflow:hidden;}
+#sfam::before{content:"";position:absolute;inset:-2px;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/bg-ballet-1.jpg') center/cover no-repeat;
+  opacity:.42;pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:destination-in;}
+#sfam>*{position:relative;z-index:1;}
+#subic{position:relative;overflow:hidden;}
+#subic::before{content:"";position:absolute;inset:-2px;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/bg-ballet-5.jpg') center/cover no-repeat;
+  opacity:.38;pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:destination-in;}
+#subic>*{position:relative;z-index:1;}
+#sdc{position:relative;overflow:hidden;}
+#sdc::before{content:"";position:absolute;inset:-2px;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/bg-ballet-4.jpg') center/cover no-repeat;
+  opacity:.36;pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:destination-in;}
+#sdc>*{position:relative;z-index:1;}
+#sbuzon{position:relative;overflow:hidden;}
+#sbuzon::before{content:"";position:absolute;inset:-2px;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/bg-ballet-2.jpg') center/cover no-repeat;
+  opacity:.48;pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:destination-in;}
+#sbuzon>*{position:relative;z-index:1;}
+#salbum{position:relative;overflow:hidden;}
+#salbum::before{content:"";position:absolute;inset:-2px;
+  background:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/bg-ballet-2.jpg') center/cover no-repeat;
+  opacity:.40;pointer-events:none;z-index:0;
+  mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);mask-composite:intersect;
+  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 20%,#000 80%,transparent 100%),linear-gradient(to bottom,transparent 0%,#000 18%,#000 82%,transparent 100%);-webkit-mask-composite:destination-in;}
+#salbum>*{position:relative;z-index:1;}
+.wrap section{position:relative;}
+.wrap section::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:70px;
+  pointer-events:none;z-index:2;
+  background:linear-gradient(to bottom,transparent,var(--bg));}
+.hero::after,#sgal::after{display:none;}
 
 /* ── ENVELOPE ── */
 #envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#FFF7E8;}
@@ -500,33 +598,49 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- HERO -->
   <section class="hero" style="padding:8vh 28px 13vh;justify-content:flex-end;">
-    <img class="hero-photo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/hero.jpg" alt="Alia Valeshka" fetchpriority="high">
+    <img class="hero-photo" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/hero-ballet.jpg" alt="Alia Valeshka" fetchpriority="high">
     <div class="hero-veil"></div>
     <div class="hero-veil2"></div>
+    <div class="hero-curtain"></div>
     <!-- Disco ball -->
-    <svg class="hero-deco-tl" viewBox="0 0 60 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="30" y1="0" x2="30" y2="8" stroke="#B0B0B0" stroke-width="2"/>
-      <defs><radialGradient id="dball2" cx="38%" cy="32%"><stop offset="0%" stop-color="#F0F0F0"/><stop offset="55%" stop-color="#B0B0B0"/><stop offset="100%" stop-color="#606060"/></radialGradient><clipPath id="dclip2"><circle cx="30" cy="38" r="24"/></clipPath></defs>
-      <circle cx="30" cy="38" r="24" fill="url(#dball2)"/>
-      <g clip-path="url(#dclip2)" stroke="rgba(255,255,255,0.35)" stroke-width="0.6">
-        <line x1="6" y1="28" x2="54" y2="28"/><line x1="6" y1="35" x2="54" y2="35"/><line x1="6" y1="42" x2="54" y2="42"/><line x1="6" y1="49" x2="54" y2="49"/>
-        <line x1="18" y1="14" x2="18" y2="62"/><line x1="26" y1="14" x2="26" y2="62"/><line x1="34" y1="14" x2="34" y2="62"/><line x1="42" y1="14" x2="42" y2="62"/>
+    <svg class="hero-deco-tl ballet-sway" viewBox="0 0 84 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M42,5 C38,20 30,29 25,37" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".85"/>
+      <path d="M42,5 C46,20 54,29 59,37" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".85"/>
+      <path d="M42,5 C36,9 31,7 29,3" stroke="#D9C07C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".6"/>
+      <path d="M42,5 C48,9 53,7 55,3" stroke="#D9C07C" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".6"/>
+      <circle cx="42" cy="5" r="2.3" fill="#D9C07C"/>
+      <g transform="rotate(-13 25 60)">
+        <path d="M25,37 C18,38 15,45 15,54 C15,68 20,79 27,79 C34,79 37,71 37,60 C37,48 32,37 25,37 Z" fill="#FFE6F9"/>
+        <path d="M25,37 C18,38 15,45 15,54 C15,68 20,79 27,79 C34,79 37,71 37,60 C37,48 32,37 25,37 Z" fill="none" stroke="#FF6FC6" stroke-width="1" opacity=".55"/>
+        <path d="M16,72 C18,78 22,80 27,79 C32,78 35,74 36,69 C31,73 22,74 16,72 Z" fill="#FFBDE7"/>
+        <path d="M16,47 Q26,52 36,47" stroke="#FF6FC6" stroke-width="1" fill="none" opacity=".5"/>
       </g>
-      <ellipse cx="22" cy="28" rx="7" ry="4" fill="rgba(255,255,255,0.28)"/>
+      <g transform="rotate(11 59 60)">
+        <path d="M59,37 C66,38 69,45 69,54 C69,68 64,79 57,79 C50,79 47,71 47,60 C47,48 52,37 59,37 Z" fill="#FFF7E8"/>
+        <path d="M59,37 C66,38 69,45 69,54 C69,68 64,79 57,79 C50,79 47,71 47,60 C47,48 52,37 59,37 Z" fill="none" stroke="#FF6FC6" stroke-width="1" opacity=".45"/>
+        <path d="M68,72 C66,78 62,80 57,79 C52,78 49,74 48,69 C53,73 62,74 68,72 Z" fill="#FFC2E6"/>
+        <path d="M48,47 Q58,52 68,47" stroke="#FF6FC6" stroke-width="1" fill="none" opacity=".45"/>
+      </g>
     </svg>
     <!-- Cherries -->
-    <svg class="hero-deco-tr" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M32,36 C36,22 50,16 55,8" stroke="#6BAB3A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <path d="M58,32 C54,20 52,16 55,8" stroke="#6BAB3A" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <ellipse cx="55" cy="8" rx="10" ry="5.5" fill="#7BC042" transform="rotate(-15 55 8)"/>
-      <defs><radialGradient id="cs1h" cx="35%" cy="35%"><stop offset="0%" stop-color="rgba(255,255,255,0.28)"/><stop offset="100%" stop-color="rgba(0,0,0,0.08)"/></radialGradient></defs>
-      <circle cx="30" cy="50" r="18" fill="#FF24AF"/><circle cx="30" cy="50" r="18" fill="url(#cs1h)"/>
-      <circle cx="60" cy="46" r="18" fill="#D0157A"/>
-      <ellipse cx="24" cy="42" rx="5" ry="3" fill="rgba(255,255,255,0.30)" transform="rotate(-20 24 42)"/>
+    <svg class="hero-deco-tr ballet-float" viewBox="0 0 96 92" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <ellipse cx="42" cy="68" rx="30" ry="17" fill="#FFF7E8"/>
+      <ellipse cx="42" cy="68" rx="30" ry="17" fill="none" stroke="#D9C07C" stroke-width="1" opacity=".5"/>
+      <path d="M24,62 C33,52 50,50 64,57 C54,68 37,71 24,62 Z" fill="#FFE6F9"/>
+      <path d="M28,64 C36,57 48,55 58,59" stroke="#FFBDE7" stroke-width="1.1" fill="none"/>
+      <path d="M60,64 C56,46 60,26 72,18" stroke="#FFF7E8" stroke-width="9" stroke-linecap="round" fill="none"/>
+      <path d="M60,64 C56,46 60,26 72,18" stroke="#D9C07C" stroke-width="1" stroke-linecap="round" fill="none" opacity=".45"/>
+      <circle cx="75" cy="16" r="7.5" fill="#FFF7E8"/>
+      <circle cx="75" cy="16" r="7.5" fill="none" stroke="#D9C07C" stroke-width="1" opacity=".45"/>
+      <path d="M82,15 L92,18 L82,21 Z" fill="#FF6FC6"/>
+      <circle cx="78" cy="14" r="1.3" fill="#2D1B0E"/>
+      <path d="M70,9 L72,4 L75,8 L78,3 L80,9" stroke="#D9C07C" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M12,74 Q20,79 28,75" stroke="#FFBDE7" stroke-width="1.2" fill="none" opacity=".7"/>
+      <path d="M8,80 Q22,85 36,81" stroke="#FFBDE7" stroke-width="1" fill="none" opacity=".5"/>
     </svg>
-    <svg class="hero-sparkle-1" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
-    <svg class="hero-sparkle-2" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
-    <svg class="hero-sparkle-3" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:0.4;"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
+    <svg class="hero-sparkle-1" viewBox="0 0 24 24" fill="#D9C07C" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
+    <svg class="hero-sparkle-2" viewBox="0 0 24 24" fill="#FFBDE7" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
+    <svg class="hero-sparkle-3" viewBox="0 0 24 24" fill="#D9C07C" style="opacity:0.55;" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
     <div class="hero-mis" id="hMis">Mis</div>
     <div class="hero-xv" id="hXv">
       XV
@@ -547,7 +661,7 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- MENSAJE -->
@@ -570,26 +684,24 @@ footer{padding:52px 20px 64px;text-align:center;}
         <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
         <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
         <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
-        <svg class="msg-sparkle-tl" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
-        <svg class="msg-sparkle-tr" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
+        <svg class="msg-sparkle-tl" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
+        <svg class="msg-sparkle-tr" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
         <p class="msg-text">La vida est&aacute; hecha de momentos inolvidables, y uno de los m&aacute;s especiales est&aacute; por llegar. Mis XV A&ntilde;os son un sue&ntilde;o que quiero compartir contigo. Tu presencia har&aacute; este d&iacute;a a&uacute;n m&aacute;s especial.</p>
       </div>
     </div>
     <!-- Mariposita mensaje -->
     <div style="display:flex;justify-content:flex-end;margin-top:12px;padding-right:8px;">
-      <svg class="mariposa mariposa-flip" width="52" height="42" viewBox="0 0 90 70" fill="none" style="opacity:0.75;">
-        <path d="M45,35 C38,22 24,8 12,14 C2,19 5,33 18,36 C30,39 42,36 45,35Z" fill="#FFC2E6" opacity="0.9"/>
-        <path d="M45,35 C36,26 22,16 14,18 C8,22 10,30 20,34 C32,38 43,36 45,35Z" fill="#FF24AF" opacity="0.45"/>
-        <path d="M45,37 C38,46 24,56 14,52 C6,49 10,38 22,36 C34,34 43,36 45,37Z" fill="#FFBDE7" opacity="0.85"/>
-        <path d="M45,37 C40,44 28,52 18,50 C10,48 13,40 22,38 C34,35 43,36 45,37Z" fill="#FF24AF" opacity="0.35"/>
-        <path d="M45,35 C52,22 66,8 78,14 C88,19 85,33 72,36 C60,39 48,36 45,35Z" fill="#FFC2E6" opacity="0.9"/>
-        <path d="M45,35 C54,26 68,16 76,18 C82,22 80,30 70,34 C58,38 47,36 45,35Z" fill="#FF24AF" opacity="0.45"/>
-        <path d="M45,37 C52,46 66,56 76,52 C84,49 80,38 68,36 C56,34 47,36 45,37Z" fill="#FFBDE7" opacity="0.85"/>
-        <ellipse cx="45" cy="36" rx="3" ry="9" fill="#C4126F"/>
-        <path d="M43,27 C41,20 37,15 35,11" stroke="#C4126F" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-        <circle cx="35" cy="11" r="2" fill="#FF24AF"/>
-        <path d="M47,27 C49,20 53,15 55,11" stroke="#C4126F" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-        <circle cx="55" cy="11" r="2" fill="#FF24AF"/>
+      <svg class="pluma pluma-flip" width="46" height="74" viewBox="0 0 54 96" fill="none" style="opacity:.8;" aria-hidden="true">
+        <path d="M27,7 C24,32 22,60 20,90" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M27,8 C13,17 6,33 8,50 C15,44 23,33 26,20 Z" fill="#FFE6F9"/>
+        <path d="M27,8 C41,17 48,33 46,50 C39,44 31,33 28,20 Z" fill="#FFC2E6"/>
+        <path d="M25,30 C13,38 8,52 9,66 C16,60 22,50 24,40 Z" fill="#FFBDE7" opacity=".92"/>
+        <path d="M25,30 C37,38 43,52 42,66 C35,60 29,50 27,40 Z" fill="#FFE6F9" opacity=".92"/>
+        <path d="M23,52 C15,60 12,70 13,80 C18,75 21,67 22,60 Z" fill="#FFC2E6" opacity=".8"/>
+        <path d="M23,52 C31,60 34,70 33,80 C28,75 25,67 24,60 Z" fill="#FFBDE7" opacity=".8"/>
+        <path d="M20,14 C14,22 11,32 11,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <path d="M33,14 C39,22 42,32 42,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <circle cx="27" cy="6" r="2" fill="#D9C07C" opacity=".9"/>
       </svg>
     </div>
   </section>
@@ -610,7 +722,7 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- FAMILIA -->
@@ -620,9 +732,9 @@ footer{padding:52px 20px 64px;text-align:center;}
     <div class="fam-wrap">
       <div class="fam-block rv">
         <div class="fam-role">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
           Quincea&ntilde;era
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF24AF"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
         </div>
         <div class="fam-names">Alia Valeshka Ruiz Young</div>
       </div>
@@ -634,9 +746,9 @@ footer{padding:52px 20px 64px;text-align:center;}
       <div class="fam-divider rv"></div>
       <div class="fam-block rv">
         <div class="fam-role">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:.5"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:.5"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
           Mis Padrinos de Honor
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:.5"><path d="M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:.5"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
         </div>
         <div class="fam-names padrinos-rot" id="padrinosRot">
           <span class="padrino-item is-on">Hellen Leiva Ramirez</span>
@@ -649,33 +761,30 @@ footer{padding:52px 20px 64px;text-align:center;}
     </div>
     <!-- Conejito esquina -->
     <div style="display:flex;justify-content:flex-start;margin-top:8px;padding-left:4px;">
-      <svg class="conejito" width="70" height="84" viewBox="0 0 100 120" fill="none" style="opacity:0.85;">
-        <ellipse cx="34" cy="25" rx="12" ry="22" fill="#F2DDD0" transform="rotate(-12 34 25)"/>
-        <ellipse cx="34" cy="25" rx="7" ry="16" fill="#F9C0C0" opacity="0.7" transform="rotate(-12 34 25)"/>
-        <ellipse cx="66" cy="25" rx="12" ry="22" fill="#F2DDD0" transform="rotate(12 66 25)"/>
-        <ellipse cx="66" cy="25" rx="7" ry="16" fill="#F9C0C0" opacity="0.7" transform="rotate(12 66 25)"/>
-        <path d="M70,12 C66,7 60,5 64,9Z" fill="#FF24AF" opacity="0.9"/>
-        <path d="M76,12 C80,7 86,5 82,9Z" fill="#FF24AF" opacity="0.9"/>
-        <ellipse cx="73" cy="11" rx="4" ry="3" fill="#C4126F"/>
-        <ellipse cx="50" cy="58" rx="28" ry="26" fill="#F5E4D8"/>
-        <ellipse cx="40" cy="55" rx="4.5" ry="5" fill="#2D1B0E" opacity="0.75"/>
-        <ellipse cx="60" cy="55" rx="4.5" ry="5" fill="#2D1B0E" opacity="0.75"/>
-        <circle cx="41.5" cy="53" r="2" fill="#fff" opacity="0.6"/>
-        <circle cx="61.5" cy="53" r="2" fill="#fff" opacity="0.6"/>
-        <ellipse cx="50" cy="62" rx="5" ry="3.5" fill="#FF8FD0"/>
-        <ellipse cx="34" cy="62" rx="7" ry="4" fill="#F9C0B0" opacity="0.5"/>
-        <ellipse cx="66" cy="62" rx="7" ry="4" fill="#F9C0B0" opacity="0.5"/>
-        <ellipse cx="50" cy="98" rx="24" ry="20" fill="#F5E4D8"/>
-        <ellipse cx="26" cy="108" rx="12" ry="7" fill="#F2DDD0"/>
-        <ellipse cx="74" cy="108" rx="12" ry="7" fill="#F2DDD0"/>
-        <circle cx="68" cy="93" r="9" fill="rgba(255,255,255,0.65)"/>
+      <svg class="cisne" width="78" height="85" viewBox="0 0 110 120" fill="none" style="opacity:.9;" aria-hidden="true">
+        <path d="M6,104 Q28,111 52,106" stroke="#FFBDE7" stroke-width="1.4" fill="none" opacity=".65"/>
+        <path d="M14,111 Q40,117 66,112" stroke="#FFBDE7" stroke-width="1.1" fill="none" opacity=".45"/>
+        <ellipse cx="48" cy="86" rx="38" ry="21" fill="#FFF7E8"/>
+        <ellipse cx="48" cy="86" rx="38" ry="21" fill="none" stroke="#D9C07C" stroke-width="1.1" opacity=".45"/>
+        <path d="M22,79 C34,64 56,61 76,70 C62,85 40,89 22,79 Z" fill="#FFE6F9"/>
+        <path d="M27,80 C38,70 54,68 68,73" stroke="#FFBDE7" stroke-width="1.2" fill="none"/>
+        <path d="M33,84 C43,76 55,74 66,78" stroke="#FFC2E6" stroke-width="1.1" fill="none" opacity=".8"/>
+        <path d="M10,84 C4,76 6,68 12,64 C12,72 12,79 16,84 Z" fill="#FFF7E8" stroke="#D9C07C" stroke-width=".9" stroke-opacity=".4"/>
+        <path d="M72,82 C66,58 72,32 86,22" stroke="#FFF7E8" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <path d="M72,82 C66,58 72,32 86,22" stroke="#D9C07C" stroke-width="1" stroke-linecap="round" fill="none" opacity=".4"/>
+        <circle cx="89" cy="19" r="9" fill="#FFF7E8"/>
+        <circle cx="89" cy="19" r="9" fill="none" stroke="#D9C07C" stroke-width="1" opacity=".4"/>
+        <path d="M97,18 L108,21.5 L97,25 Z" fill="#FF6FC6"/>
+        <circle cx="92.5" cy="17" r="1.5" fill="#2D1B0E"/>
+        <path d="M83,11 L85,5 L88.5,9.5 L92,4 L94,11" stroke="#D9C07C" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="88.5" cy="6" r="1.3" fill="#FF24AF" opacity=".8"/>
       </svg>
     </div>
   </section>
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- GALERIA -->
@@ -684,6 +793,10 @@ footer{padding:52px 20px 64px;text-align:center;}
     <h2 class="sec-title rv">Mis Momentos</h2>
     <div class="wheel-scene rv" id="wheelScene">
       <div class="wheel-ring" id="wheelRing">
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g14.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g15.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g16.jpg" alt="Alia Valeshka" /></div>
+          <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g17.jpg" alt="Alia Valeshka" /></div>
           <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g01.jpg" alt="Alia Valeshka" /></div>
           <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g02.jpg" alt="Alia Valeshka" /></div>
           <div class="wheel-card"><img data-src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/g03.jpg" alt="Alia Valeshka" /></div>
@@ -704,7 +817,7 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- UBICACION -->
@@ -763,7 +876,7 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- DRESS CODE -->
@@ -772,29 +885,29 @@ footer{padding:52px 20px 64px;text-align:center;}
     <h2 class="sec-title rv">C&oacute;digo de Vestimenta</h2>
     <!-- Maripositas arriba -->
     <div style="display:flex;justify-content:space-between;padding:0 12px;margin-bottom:8px;" class="rv">
-      <svg class="mariposa" width="48" height="38" viewBox="0 0 90 70" fill="none" style="opacity:0.72;">
-        <path d="M45,35 C38,22 24,8 12,14 C2,19 5,33 18,36 C30,39 42,36 45,35Z" fill="#FFC2E6" opacity="0.9"/>
-        <path d="M45,35 C36,26 22,16 14,18 C8,22 10,30 20,34 C32,38 43,36 45,35Z" fill="#FF24AF" opacity="0.45"/>
-        <path d="M45,37 C38,46 24,56 14,52 C6,49 10,38 22,36 C34,34 43,36 45,37Z" fill="#FFBDE7" opacity="0.85"/>
-        <path d="M45,35 C52,22 66,8 78,14 C88,19 85,33 72,36 C60,39 48,36 45,35Z" fill="#FFC2E6" opacity="0.9"/>
-        <path d="M45,35 C54,26 68,16 76,18 C82,22 80,30 70,34 C58,38 47,36 45,35Z" fill="#FF24AF" opacity="0.45"/>
-        <path d="M45,37 C52,46 66,56 76,52 C84,49 80,38 68,36 C56,34 47,36 45,37Z" fill="#FFBDE7" opacity="0.85"/>
-        <ellipse cx="45" cy="36" rx="3" ry="9" fill="#C4126F"/>
-        <path d="M43,27 C41,20 37,15 35,11" stroke="#C4126F" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-        <circle cx="35" cy="11" r="2" fill="#FF24AF"/>
-        <path d="M47,27 C49,20 53,15 55,11" stroke="#C4126F" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-        <circle cx="55" cy="11" r="2" fill="#FF24AF"/>
+      <svg class="pluma" width="42" height="68" viewBox="0 0 54 96" fill="none" style="opacity:.75;" aria-hidden="true">
+        <path d="M27,7 C24,32 22,60 20,90" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M27,8 C13,17 6,33 8,50 C15,44 23,33 26,20 Z" fill="#FFE6F9"/>
+        <path d="M27,8 C41,17 48,33 46,50 C39,44 31,33 28,20 Z" fill="#FFC2E6"/>
+        <path d="M25,30 C13,38 8,52 9,66 C16,60 22,50 24,40 Z" fill="#FFBDE7" opacity=".92"/>
+        <path d="M25,30 C37,38 43,52 42,66 C35,60 29,50 27,40 Z" fill="#FFE6F9" opacity=".92"/>
+        <path d="M23,52 C15,60 12,70 13,80 C18,75 21,67 22,60 Z" fill="#FFC2E6" opacity=".8"/>
+        <path d="M23,52 C31,60 34,70 33,80 C28,75 25,67 24,60 Z" fill="#FFBDE7" opacity=".8"/>
+        <path d="M20,14 C14,22 11,32 11,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <path d="M33,14 C39,22 42,32 42,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <circle cx="27" cy="6" r="2" fill="#D9C07C" opacity=".9"/>
       </svg>
-      <svg class="mariposa mariposa-2" width="40" height="32" viewBox="0 0 90 70" fill="none" style="opacity:0.60;">
-        <path d="M45,35 C38,22 24,8 12,14 C2,19 5,33 18,36 C30,39 42,36 45,35Z" fill="#FFC2E6" opacity="0.85"/>
-        <path d="M45,37 C38,46 24,56 14,52 C6,49 10,38 22,36 C34,34 43,36 45,37Z" fill="#FFBDE7" opacity="0.8"/>
-        <path d="M45,35 C52,22 66,8 78,14 C88,19 85,33 72,36 C60,39 48,36 45,35Z" fill="#FFC2E6" opacity="0.85"/>
-        <path d="M45,37 C52,46 66,56 76,52 C84,49 80,38 68,36 C56,34 47,36 45,37Z" fill="#FFBDE7" opacity="0.8"/>
-        <ellipse cx="45" cy="36" rx="2.5" ry="8" fill="#D0157A"/>
-        <path d="M43,27 C41,20 38,16 36,12" stroke="#D0157A" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <circle cx="36" cy="12" r="1.8" fill="#FF24AF"/>
-        <path d="M47,27 C49,20 52,16 54,12" stroke="#D0157A" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <circle cx="54" cy="12" r="1.8" fill="#FF24AF"/>
+      <svg class="pluma pluma-2" width="36" height="58" viewBox="0 0 54 96" fill="none" style="opacity:.62;" aria-hidden="true">
+        <path d="M27,7 C24,32 22,60 20,90" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M27,8 C13,17 6,33 8,50 C15,44 23,33 26,20 Z" fill="#FFE6F9"/>
+        <path d="M27,8 C41,17 48,33 46,50 C39,44 31,33 28,20 Z" fill="#FFC2E6"/>
+        <path d="M25,30 C13,38 8,52 9,66 C16,60 22,50 24,40 Z" fill="#FFBDE7" opacity=".92"/>
+        <path d="M25,30 C37,38 43,52 42,66 C35,60 29,50 27,40 Z" fill="#FFE6F9" opacity=".92"/>
+        <path d="M23,52 C15,60 12,70 13,80 C18,75 21,67 22,60 Z" fill="#FFC2E6" opacity=".8"/>
+        <path d="M23,52 C31,60 34,70 33,80 C28,75 25,67 24,60 Z" fill="#FFBDE7" opacity=".8"/>
+        <path d="M20,14 C14,22 11,32 11,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <path d="M33,14 C39,22 42,32 42,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <circle cx="27" cy="6" r="2" fill="#D9C07C" opacity=".9"/>
       </svg>
     </div>
     <div class="dc-note rv">Formal</div>
@@ -819,33 +932,30 @@ footer{padding:52px 20px 64px;text-align:center;}
     </div>
     <!-- Conejito esquina derecha -->
     <div style="display:flex;justify-content:flex-end;margin-top:16px;padding-right:6px;">
-      <svg class="conejito conejito-flip" width="76" height="90" viewBox="0 0 100 120" fill="none" style="opacity:0.82;">
-        <ellipse cx="34" cy="25" rx="12" ry="22" fill="#F2DDD0" transform="rotate(-12 34 25)"/>
-        <ellipse cx="34" cy="25" rx="7" ry="16" fill="#F9C0C0" opacity="0.7" transform="rotate(-12 34 25)"/>
-        <ellipse cx="66" cy="25" rx="12" ry="22" fill="#F2DDD0" transform="rotate(12 66 25)"/>
-        <ellipse cx="66" cy="25" rx="7" ry="16" fill="#F9C0C0" opacity="0.7" transform="rotate(12 66 25)"/>
-        <path d="M70,12 C66,7 60,5 64,9Z" fill="#FF24AF" opacity="0.9"/>
-        <path d="M76,12 C80,7 86,5 82,9Z" fill="#FF24AF" opacity="0.9"/>
-        <ellipse cx="73" cy="11" rx="4" ry="3" fill="#C4126F"/>
-        <ellipse cx="50" cy="58" rx="28" ry="26" fill="#F5E4D8"/>
-        <ellipse cx="40" cy="55" rx="4.5" ry="5" fill="#2D1B0E" opacity="0.75"/>
-        <ellipse cx="60" cy="55" rx="4.5" ry="5" fill="#2D1B0E" opacity="0.75"/>
-        <circle cx="41.5" cy="53" r="2" fill="#fff" opacity="0.6"/>
-        <circle cx="61.5" cy="53" r="2" fill="#fff" opacity="0.6"/>
-        <ellipse cx="50" cy="62" rx="5" ry="3.5" fill="#FF8FD0"/>
-        <ellipse cx="34" cy="62" rx="7" ry="4" fill="#F9C0B0" opacity="0.5"/>
-        <ellipse cx="66" cy="62" rx="7" ry="4" fill="#F9C0B0" opacity="0.5"/>
-        <ellipse cx="50" cy="98" rx="24" ry="20" fill="#F5E4D8"/>
-        <ellipse cx="26" cy="108" rx="12" ry="7" fill="#F2DDD0"/>
-        <ellipse cx="74" cy="108" rx="12" ry="7" fill="#F2DDD0"/>
-        <circle cx="68" cy="93" r="9" fill="rgba(255,255,255,0.65)"/>
+      <svg class="cisne cisne-flip" width="84" height="92" viewBox="0 0 110 120" fill="none" style="opacity:.85;" aria-hidden="true">
+        <path d="M6,104 Q28,111 52,106" stroke="#FFBDE7" stroke-width="1.4" fill="none" opacity=".65"/>
+        <path d="M14,111 Q40,117 66,112" stroke="#FFBDE7" stroke-width="1.1" fill="none" opacity=".45"/>
+        <ellipse cx="48" cy="86" rx="38" ry="21" fill="#FFF7E8"/>
+        <ellipse cx="48" cy="86" rx="38" ry="21" fill="none" stroke="#D9C07C" stroke-width="1.1" opacity=".45"/>
+        <path d="M22,79 C34,64 56,61 76,70 C62,85 40,89 22,79 Z" fill="#FFE6F9"/>
+        <path d="M27,80 C38,70 54,68 68,73" stroke="#FFBDE7" stroke-width="1.2" fill="none"/>
+        <path d="M33,84 C43,76 55,74 66,78" stroke="#FFC2E6" stroke-width="1.1" fill="none" opacity=".8"/>
+        <path d="M10,84 C4,76 6,68 12,64 C12,72 12,79 16,84 Z" fill="#FFF7E8" stroke="#D9C07C" stroke-width=".9" stroke-opacity=".4"/>
+        <path d="M72,82 C66,58 72,32 86,22" stroke="#FFF7E8" stroke-width="11" stroke-linecap="round" fill="none"/>
+        <path d="M72,82 C66,58 72,32 86,22" stroke="#D9C07C" stroke-width="1" stroke-linecap="round" fill="none" opacity=".4"/>
+        <circle cx="89" cy="19" r="9" fill="#FFF7E8"/>
+        <circle cx="89" cy="19" r="9" fill="none" stroke="#D9C07C" stroke-width="1" opacity=".4"/>
+        <path d="M97,18 L108,21.5 L97,25 Z" fill="#FF6FC6"/>
+        <circle cx="92.5" cy="17" r="1.5" fill="#2D1B0E"/>
+        <path d="M83,11 L85,5 L88.5,9.5 L92,4 L94,11" stroke="#D9C07C" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="88.5" cy="6" r="1.3" fill="#FF24AF" opacity=".8"/>
       </svg>
     </div>
   </section>
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- BUZON -->
@@ -889,7 +999,27 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- ORNAMENTO -->
   <div class="orn-wrap rv">
-    <svg viewBox="0 0 180 22" fill="none"><path d="M0,11 Q12,4 24,11 Q36,18 48,11 Q60,4 72,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><path d="M108,11 Q120,4 132,11 Q144,18 156,11 Q168,4 180,11" stroke="#FF24AF" stroke-width="0.9" opacity="0.28" fill="none"/><circle cx="90" cy="11" r="3.5" fill="#FF24AF" opacity="0.30"/><circle cx="80" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/><circle cx="100" cy="11" r="1.8" fill="#FF24AF" opacity="0.18"/></svg>
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
+  </div>
+
+  <!-- ALBUM COMPARTIDO -->
+  <section id="salbum">
+    <div class="eyebrow rv">Comparte lo que vivas</div>
+    <h2 class="sec-title rv">&Aacute;lbum Compartido</h2>
+    <div class="album-card rv">
+      <p class="album-text">Cada foto que tomes esa noche es un recuerdo que quiero conservar.<br>Escanea el c&oacute;digo y s&uacute;belas al &aacute;lbum para revivirlas juntos.</p>
+      <div class="album-qr"><img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/qr-album.png" alt="C&oacute;digo QR del &aacute;lbum compartido" width="186" height="186"></div>
+      <div class="album-hint">Escanea con tu c&aacute;mara</div>
+      <a class="album-btn" id="albumBtn" href="https://xv-alia-valeshka.vercel.app/" data-pendiente="link-album" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.2"/><path d="M8 6l1.4-2.2h5.2L16 6"/></svg>
+        Ir al &aacute;lbum
+      </a>
+    </div>
+  </section>
+
+  <!-- ORNAMENTO -->
+<div class="orn-wrap rv">
+    <svg viewBox="0 0 180 26" fill="none" aria-hidden="true"><path d="M14,13 H166" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".55"/><path d="M14,9 V17 M166,9 V17" stroke="#D9C07C" stroke-width="1.6" stroke-linecap="round" opacity=".45"/><path d="M90,13 C84,7 76,6 72,10 C69,13 72,17 78,17 C84,17 88,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M90,13 C96,7 104,6 108,10 C111,13 108,17 102,17 C96,17 92,15 90,13 Z" fill="#FF24AF" opacity=".26"/><path d="M86,15 C82,20 76,23 71,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><path d="M94,15 C98,20 104,23 109,25" stroke="#FF24AF" stroke-width="1.2" stroke-linecap="round" fill="none" opacity=".22"/><circle cx="90" cy="13" r="2.6" fill="#D9C07C" opacity=".6"/></svg>
   </div>
 
   <!-- RSVP -->
@@ -983,27 +1113,29 @@ footer{padding:52px 20px 64px;text-align:center;}
 
     <!-- Maripositas bajo el RSVP -->
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;padding:0 8px;">
-      <svg class="mariposa mariposa-3" width="42" height="34" viewBox="0 0 90 70" fill="none" style="opacity:0.65;">
-        <path d="M45,35 C38,22 24,8 12,14 C2,19 5,33 18,36 C30,39 42,36 45,35Z" fill="#FFC2E6" opacity="0.9"/>
-        <path d="M45,37 C38,46 24,56 14,52 C6,49 10,38 22,36 C34,34 43,36 45,37Z" fill="#FFBDE7" opacity="0.85"/>
-        <path d="M45,35 C52,22 66,8 78,14 C88,19 85,33 72,36 C60,39 48,36 45,35Z" fill="#FFC2E6" opacity="0.9"/>
-        <path d="M45,37 C52,46 66,56 76,52 C84,49 80,38 68,36 C56,34 47,36 45,37Z" fill="#FFBDE7" opacity="0.85"/>
-        <ellipse cx="45" cy="36" rx="2.5" ry="8" fill="#D0157A"/>
-        <path d="M43,27 C41,20 37,15 35,11" stroke="#D0157A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-        <circle cx="35" cy="11" r="1.8" fill="#FF24AF"/>
-        <path d="M47,27 C49,20 53,15 55,11" stroke="#D0157A" stroke-width="1.1" stroke-linecap="round" fill="none"/>
-        <circle cx="55" cy="11" r="1.8" fill="#FF24AF"/>
+      <svg class="pluma pluma-3" width="38" height="62" viewBox="0 0 54 96" fill="none" style="opacity:.68;" aria-hidden="true">
+        <path d="M27,7 C24,32 22,60 20,90" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M27,8 C13,17 6,33 8,50 C15,44 23,33 26,20 Z" fill="#FFE6F9"/>
+        <path d="M27,8 C41,17 48,33 46,50 C39,44 31,33 28,20 Z" fill="#FFC2E6"/>
+        <path d="M25,30 C13,38 8,52 9,66 C16,60 22,50 24,40 Z" fill="#FFBDE7" opacity=".92"/>
+        <path d="M25,30 C37,38 43,52 42,66 C35,60 29,50 27,40 Z" fill="#FFE6F9" opacity=".92"/>
+        <path d="M23,52 C15,60 12,70 13,80 C18,75 21,67 22,60 Z" fill="#FFC2E6" opacity=".8"/>
+        <path d="M23,52 C31,60 34,70 33,80 C28,75 25,67 24,60 Z" fill="#FFBDE7" opacity=".8"/>
+        <path d="M20,14 C14,22 11,32 11,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <path d="M33,14 C39,22 42,32 42,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <circle cx="27" cy="6" r="2" fill="#D9C07C" opacity=".9"/>
       </svg>
-      <svg class="mariposa mariposa-flip mariposa-2" width="36" height="28" viewBox="0 0 90 70" fill="none" style="opacity:0.55;">
-        <path d="M45,35 C38,22 24,8 12,14 C2,19 5,33 18,36 C30,39 42,36 45,35Z" fill="#FFC2E6" opacity="0.85"/>
-        <path d="M45,37 C38,46 24,56 14,52 C6,49 10,38 22,36 C34,34 43,36 45,37Z" fill="#FFC2E6" opacity="0.8"/>
-        <path d="M45,35 C52,22 66,8 78,14 C88,19 85,33 72,36 C60,39 48,36 45,35Z" fill="#FFC2E6" opacity="0.85"/>
-        <path d="M45,37 C52,46 66,56 76,52 C84,49 80,38 68,36 C56,34 47,36 45,37Z" fill="#FFC2E6" opacity="0.8"/>
-        <ellipse cx="45" cy="36" rx="2.5" ry="7" fill="#C4126F"/>
-        <path d="M43,27 C41,21 38,16 36,13" stroke="#C4126F" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <circle cx="36" cy="13" r="1.5" fill="#FF24AF"/>
-        <path d="M47,27 C49,21 52,16 54,13" stroke="#C4126F" stroke-width="1" stroke-linecap="round" fill="none"/>
-        <circle cx="54" cy="13" r="1.5" fill="#FF24AF"/>
+      <svg class="pluma pluma-flip pluma-2" width="32" height="52" viewBox="0 0 54 96" fill="none" style="opacity:.58;" aria-hidden="true">
+        <path d="M27,7 C24,32 22,60 20,90" stroke="#D9C07C" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M27,8 C13,17 6,33 8,50 C15,44 23,33 26,20 Z" fill="#FFE6F9"/>
+        <path d="M27,8 C41,17 48,33 46,50 C39,44 31,33 28,20 Z" fill="#FFC2E6"/>
+        <path d="M25,30 C13,38 8,52 9,66 C16,60 22,50 24,40 Z" fill="#FFBDE7" opacity=".92"/>
+        <path d="M25,30 C37,38 43,52 42,66 C35,60 29,50 27,40 Z" fill="#FFE6F9" opacity=".92"/>
+        <path d="M23,52 C15,60 12,70 13,80 C18,75 21,67 22,60 Z" fill="#FFC2E6" opacity=".8"/>
+        <path d="M23,52 C31,60 34,70 33,80 C28,75 25,67 24,60 Z" fill="#FFBDE7" opacity=".8"/>
+        <path d="M20,14 C14,22 11,32 11,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <path d="M33,14 C39,22 42,32 42,42" stroke="#FF6FC6" stroke-width=".7" fill="none" opacity=".45"/>
+        <circle cx="27" cy="6" r="2" fill="#D9C07C" opacity=".9"/>
       </svg>
     </div>
     <p class="rsvp-nokids rv">Con todo el cariño: esta celebración es solo para adultos.<br>Agradecemos tu comprensión.<br><br>Por favor confirma antes del <strong>15 de septiembre de 2026</strong>.</p>
@@ -1126,21 +1258,25 @@ function launchPage(){
 function initSparkles(){
   var wrap=document.getElementById('wrapEl');
   var h=wrap.scrollHeight||7000;
-  var colors=['#FF24AF','#FF24AF','#FF24AF','#2D1B0E'];
-  for(var i=0;i<55;i++){
+  /* polvo de escenario: destello fino de 4 puntas + nota musical ocasional */
+  var SPARK='M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z';
+  var NOTE='M9 3v10.2A3.3 3.3 0 1 0 10.6 16V7.4l6.4-1.6V12A3.3 3.3 0 1 0 18.6 15V2z';
+  var colors=['#D9C07C','#D9C07C','#FFBDE7','#FF24AF','#FFF7E8'];
+  for(var i=0;i<58;i++){
+    var isNote=(i%9===0);
     var sp=document.createElementNS('http://www.w3.org/2000/svg','svg');
-    var sz=(Math.random()*14+8).toFixed(0);
-    var col=colors[Math.floor(Math.random()*colors.length)];
-    var op=(Math.random()*0.30+0.10).toFixed(2);
+    var sz=(isNote?(Math.random()*7+9):(Math.random()*13+7)).toFixed(0);
+    var col=isNote?'#D9C07C':colors[Math.floor(Math.random()*colors.length)];
+    var op=(Math.random()*0.26+0.10).toFixed(2);
     sp.setAttribute('viewBox','0 0 24 24');
     sp.setAttribute('fill',col);
     sp.style.cssText=
       'position:absolute;left:'+Math.random()*100+'%;top:'+Math.floor(Math.random()*h)+'px;'+
       'width:'+sz+'px;height:'+sz+'px;opacity:'+op+';pointer-events:none;z-index:0;'+
-      'animation:twinkle4 '+(Math.random()*4+2).toFixed(1)+'s ease-in-out infinite;'+
+      'animation:'+(isNote?'noteDrift '+(Math.random()*6+9).toFixed(1)+'s ease-in-out infinite':'twinkle4 '+(Math.random()*4+2).toFixed(1)+'s ease-in-out infinite')+';'+
       'animation-delay:'+(Math.random()*6).toFixed(1)+'s;';
     var path=document.createElementNS('http://www.w3.org/2000/svg','path');
-    path.setAttribute('d','M12 2l1.2 7.8L21 12l-7.8 1.2L12 22l-1.2-8.8L3 12l8.8-1.2z');
+    path.setAttribute('d',isNote?NOTE:SPARK);
     sp.appendChild(path);
     wrap.appendChild(sp);
   }
