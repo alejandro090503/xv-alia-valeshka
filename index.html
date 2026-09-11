@@ -370,7 +370,7 @@ section{padding:52px 28px;}
 .fam-wrap{text-align:center;}
 .fam-block{padding:18px 0;}
 .fam-role{font-family:'Great Vibes',cursive;font-size:40px;color:var(--pink);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:10px;}
-.padrinos-rot{position:relative;min-height:96px;display:flex;align-items:center;justify-content:center;}
+.padrinos-rot{position:relative;min-height:132px;display:flex;align-items:center;justify-content:center;}
 .padrino-item{position:absolute;left:0;right:0;top:50%;transform:translateY(calc(-50% + 8px));
   opacity:0;transition:opacity .95s ease,transform .95s ease;padding:0 8px;pointer-events:none;}
 .padrino-item.is-on{opacity:1;transform:translateY(-50%);}
@@ -382,7 +382,7 @@ section{padding:52px 28px;}
   .padrino-item{position:static;opacity:1;transform:none;display:block;}
   .padrinos-dots{display:none;}
 }
-.fam-names{font-family:'Cormorant Garamond',serif;font-size:16px;line-height:1.95;color:var(--dark);letter-spacing:.5px;}
+.fam-names{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;line-height:1.75;color:var(--dark);letter-spacing:.4px;}
 .fam-divider{height:1px;background:linear-gradient(to right,transparent,var(--pink-light) 30%,var(--pink-light) 70%,transparent);margin:14px auto;}
 
 /* ── CONEJITO ── */
@@ -765,11 +765,9 @@ footer{padding:52px 20px 64px;text-align:center;}
           <svg width="16" height="16" viewBox="0 0 24 24" fill="#2D1B0E" style="opacity:.5"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
         </div>
         <div class="fam-names padrinos-rot" id="padrinosRot">
-          <span class="padrino-item is-on">Hellen Leiva Ramirez</span>
-          <span class="padrino-item">Pa&uacute;l Velasquez Porras</span>
-          <span class="padrino-item">Victoria Delfina Escudero Pajuelo</span>
-          <span class="padrino-item">Jesus Arquimedes S&aacute;nchez Valencia</span>
-          <div class="padrinos-dots" id="padrinosDots" aria-hidden="true"></div>
+          <span class="padrino-item is-on">Hellen Leiva Ramirez<br>&amp;<br>Pa&uacute;l Velasquez Porras</span>
+          <span class="padrino-item">Victoria Delfina Escudero Pajuelo<br>&amp;<br>Jesus Arquimedes S&aacute;nchez Valencia</span>
+          <div class="padrinos-dots" id="padrinosDots"></div>
         </div>
       </div>
     </div>
