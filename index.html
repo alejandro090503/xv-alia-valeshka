@@ -75,10 +75,24 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
   animation:goldSweep 5.5s linear infinite;
-  padding-left:.34em;padding-right:.34em;
-  margin-left:-.34em;margin-right:-.34em;
+  /* la caja de padding es la que se pinta: sin holgura, background-clip:text
+     corta los rasgos que sobresalen de Great Vibes (arriba, abajo y a los lados) */
+  box-sizing:border-box;
+  padding:.30em .34em;
   filter:drop-shadow(0 0 5px rgba(201,164,86,.32));
 }
+/* la holgura vertical se descuenta del margen para no mover el layout,
+   y el ancho al 100% evita que el padding lateral desborde la sección */
+.sec-title,.cd-label,.fam-role,.ubic-tipo,.ft-name,.hero-mis{
+  width:100%;margin-left:0;margin-right:0;margin-top:-.30em;
+}
+.sec-title{line-height:1.32;margin-bottom:calc(6px - .30em);}
+.cd-label{line-height:1.32;margin-bottom:calc(24px - .30em);}
+.fam-role{line-height:1.32;margin-bottom:calc(8px - .30em);}
+.ubic-tipo{line-height:1.32;margin-bottom:calc(8px - .30em);}
+.ft-name{line-height:1.32;margin-bottom:calc(0px - .30em);}
+.hero-mis{line-height:1.28;}
+.hero-xv{padding:.16em .18em;margin-left:-.18em;margin-right:-.18em;margin-top:-.16em;margin-bottom:-.16em;}
 /* el icono dentro del rol de familia conserva su tinta */
 .fam-role svg{-webkit-text-fill-color:initial;}
 /* sobre la foto del hero: halo claro para que el dorado no se pierda */
