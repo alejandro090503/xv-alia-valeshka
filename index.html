@@ -38,7 +38,7 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 /* ── HERO: foto de fondo ── */
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;z-index:0;}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,247,232,0.62) 0%,rgba(255,238,247,0.22) 16%,rgba(255,230,249,0.10) 34%,rgba(255,247,232,0.55) 54%,rgba(255,247,232,0.90) 68%,rgba(255,247,232,0.97) 82%,var(--bg) 100%);}
+  background:linear-gradient(180deg,rgba(255,247,232,0.62) 0%,rgba(255,238,247,0.22) 14%,rgba(255,230,249,0.10) 28%,rgba(255,247,232,0.48) 42%,rgba(255,247,232,0.84) 56%,rgba(255,247,232,0.95) 70%,rgba(255,247,232,0.98) 84%,var(--bg) 100%);}
 .hero-veil2{position:absolute;inset:0;z-index:1;pointer-events:none;
   background:radial-gradient(ellipse 88% 42% at 50% 82%,rgba(255,247,232,0.70) 0%,transparent 72%);}
 .hero>*{position:relative;z-index:2;}
@@ -86,7 +86,9 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .sec-title,.cd-label,.fam-role,.ubic-tipo,.ft-name,.hero-mis{
   width:100%;margin-left:0;margin-right:0;margin-top:-.30em;
 }
-.sec-title{line-height:1.32;margin-bottom:calc(6px - .30em);}
+.sec-title{line-height:1.42;margin-bottom:calc(6px - .30em);}
+#salbum .sec-title{margin-bottom:calc(18px - .30em);}
+#salbum .album-card{margin-top:32px;}
 .cd-label{line-height:1.32;margin-bottom:calc(24px - .30em);}
 .fam-role{line-height:1.32;margin-bottom:calc(8px - .30em);}
 .ubic-tipo{line-height:1.32;margin-bottom:calc(8px - .30em);}
@@ -262,7 +264,11 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .ft-c-tr{top:-11px;right:-11px;transform:scaleX(-1);}
 .ft-c-bl{bottom:-11px;left:-11px;transform:scaleY(-1);}
 .ft-c-br{bottom:-11px;right:-11px;transform:scale(-1,-1);}
-@media(min-width:420px){.ft-portrait{width:262px;}}
+.ft-deco{position:absolute;pointer-events:none;z-index:2;height:auto;}
+.ft-deco-l{width:56px;left:-38px;bottom:14px;transform:rotate(-8deg);}
+.ft-deco-r{width:52px;right:-34px;bottom:36px;transform:rotate(9deg);}
+@media(min-width:420px){.ft-portrait{width:262px;}.ft-deco-l{width:64px;left:-46px;}.ft-deco-r{width:58px;right:-42px;}}
+@media(max-width:359px){.ft-deco-l{width:46px;left:-26px;}.ft-deco-r{width:44px;right:-24px;}}
 
 /* ── ENVELOPE ── */
 #envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#FFF7E8;}
@@ -326,7 +332,7 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .hero-mis{text-shadow:0 1px 12px rgba(255,247,232,0.9);font-family:'Great Vibes',cursive;font-size:42px;color:var(--gold);line-height:1;opacity:0;transform:translateY(18px);}
 .hero-xv{
   font-family:'Playfair Display',serif;font-weight:900;
-  font-size:clamp(108px,30vw,140px);color:var(--pink);
+  font-size:clamp(128px,36vw,168px);color:var(--pink);
   line-height:0.85;letter-spacing:-5px;
   position:relative;display:inline-block;
   opacity:0;transform:translateY(18px);
@@ -476,7 +482,8 @@ section{padding:52px 28px;}
   border:1px solid rgba(255,36,175,0.22);
   border-radius:3px;pointer-events:none;z-index:0;
 }
-.buzon-icon-wrap{margin-bottom:14px;position:relative;z-index:1;}
+.buzon-icon-wrap{margin:20px 0 2px;position:relative;z-index:1;}
+.buzon-icon-wrap svg{width:78px;height:72px;}
 .buzon-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.85;color:var(--text);margin-bottom:0;position:relative;z-index:1;}
 
 /* ── RSVP ── */
@@ -683,16 +690,16 @@ footer{padding:52px 20px 64px;text-align:center;}
     <div class="hero-veil2"></div>
     <div class="hero-curtain"></div>
     <!-- Disco ball -->
-    <img class="hero-deco-tl deco-img ballet-sway" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas.png" alt="" aria-hidden="true" width="243" height="365">
+    <img class="hero-deco-tl deco-img ballet-sway" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas-rosa.png" alt="" aria-hidden="true" width="243" height="365">
     <!-- Cherries -->
-    <img class="hero-deco-tr ballet-float deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo.png" alt="" aria-hidden="true" width="244" height="207">
+    <img class="hero-deco-tr ballet-float deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo-rosa.png" alt="" aria-hidden="true" width="244" height="207">
     <svg class="hero-sparkle-1" viewBox="0 0 24 24" fill="#D9C07C" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
     <svg class="hero-sparkle-2" viewBox="0 0 24 24" fill="#FFBDE7" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
     <svg class="hero-sparkle-3" viewBox="0 0 24 24" fill="#D9C07C" style="opacity:0.55;" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
     <div class="hero-mis" id="hMis">Mis</div>
     <div class="hero-xv" id="hXv">
       XV
-      <img class="hero-bow-xv deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo.png" alt="" aria-hidden="true" width="244" height="207">
+      
     </div>
     <div class="hero-name" id="hName">Alia Valeshka</div>
     <div class="hero-sep" id="hSep"></div>
@@ -883,7 +890,7 @@ footer{padding:52px 20px 64px;text-align:center;}
       </span>
       <div class="ubic-tipo">Recepci&oacute;n</div>
       <div class="ubic-name">Estaca Lima Per&uacute; El Olivar</div>
-      <div class="ubic-addr">Jir&oacute;n Los Alamos, cruce con calle Las Casuarinas<br>Callao, Per&uacute;</div>
+      <div class="ubic-addr">Jr. Los &Aacute;lamos &amp; Casuarinas<br>Callao, Per&uacute;</div>
       <div class="ubic-hora">7:00 p.m.</div>
       <a class="btn-pink" href="https://maps.app.goo.gl/V5ACZrZ2XAmA7jHd8?g_st=ac" target="_blank">Ver Ubicaci&oacute;n</a>
     </div>
@@ -1012,7 +1019,7 @@ footer{padding:52px 20px 64px;text-align:center;}
         <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/dama.png" alt="Dama con vestido largo" width="533" height="784">
         <figcaption>
           <span class="dc-card-lbl">Damas</span>
-          <span class="dc-card-sub">Vestido largo</span>
+          <span class="dc-card-sub">Vestido</span>
         </figcaption>
       </figure>
     </div>
@@ -1057,7 +1064,7 @@ footer{padding:52px 20px 64px;text-align:center;}
   <!-- BUZON -->
   <section id="sbuzon" style="padding:52px 28px 40px;">
     <div class="eyebrow rv">Con Cari&ntilde;o</div>
-    <h2 class="sec-title rv">Buz&oacute;n de Dinero</h2>
+    <h2 class="sec-title rv">Un Regalito</h2>
     <div class="buzon-outer rv">
       <img class="buzon-bow-top deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo.png" alt="" aria-hidden="true" width="244" height="207">
       <div class="buzon-card">
@@ -1066,6 +1073,8 @@ footer{padding:52px 20px 64px;text-align:center;}
         <svg class="mf-corner mf-tr" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
         <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
         <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
+        
+        <p class="buzon-text">Mi mayor ilusi&oacute;n es tenerte esa noche conmigo: tu presencia es, de verdad, el regalo m&aacute;s bonito.</p>
         <div class="buzon-icon-wrap">
           <!-- Gift / money box icon -->
           <svg width="56" height="52" viewBox="0 0 56 52" fill="none">
@@ -1080,7 +1089,6 @@ footer{padding:52px 20px 64px;text-align:center;}
             <ellipse cx="26.5" cy="11.5" rx="1.5" ry="1" fill="rgba(255,255,255,0.38)"/>
           </svg>
         </div>
-        <p class="buzon-text">Mi mayor ilusi&oacute;n es tenerte esa noche conmigo: tu presencia es, de verdad, el regalo m&aacute;s bonito.<br><br>Si adem&aacute;s quisieras acompa&ntilde;ar mi camino en el ballet &mdash; los viajes y las competencias que vienen &mdash; durante la fiesta estar&eacute; pasando por las mesas con un buz&oacute;n, y ah&iacute; podr&aacute;s dejar tu detalle en efectivo si as&iacute; lo deseas.<br><br>Sea como sea, lo &uacute;nico que necesito es verte bailar conmigo.</p>
       </div>
     </div>
   </section>
@@ -1196,6 +1204,8 @@ footer{padding:52px 20px 64px;text-align:center;}
     <img class="ft-bow deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo.png" alt="" aria-hidden="true" width="244" height="207">
     <figure class="ft-portrait rv">
       <span class="ft-frame-glow" aria-hidden="true"></span>
+      <img class="ft-deco ft-deco-l" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas-rosa.png" alt="" aria-hidden="true">
+      <img class="ft-deco ft-deco-r" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo-rosa.png" alt="" aria-hidden="true">
       <span class="ft-arch">
         <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/footer-alia.jpg" alt="Alia Valeshka en la barra de ballet" width="750" height="1000" loading="lazy">
       </span>
