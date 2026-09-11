@@ -491,7 +491,7 @@ section{padding:52px 28px;}
   transform:rotate(12deg);
   filter:drop-shadow(0 4px 10px rgba(255,36,175,0.25));
 }
-.rsvp-bailarina{width:104px;height:auto;display:block;pointer-events:none;filter:drop-shadow(0 6px 14px rgba(184,140,150,.26));animation:balletFloat 7.5s ease-in-out infinite;}
+.rsvp-bailarina{position:static;width:128px;height:auto;display:block;margin:26px auto 0;transform:none;pointer-events:none;filter:drop-shadow(0 8px 16px rgba(184,140,150,.24));animation:balletFloat 7.5s ease-in-out infinite;}
 .rsvp-frame{
   border:1.5px solid rgba(184,144,106,0.55);
   border-radius:5px;padding:34px 22px 30px;
@@ -1154,10 +1154,12 @@ footer{padding:52px 20px 64px;text-align:center;}
         <p class="rsvp-feedback" id="rsvpFeedback"></p>
       </div>
 
-      <!-- Conejito esquina inferior-derecha del RSVP -->
-      <img class="rsvp-bailarina" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-bailarina.png" alt="" aria-hidden="true" width="295" height="374">
 
     </div>
+
+    <!-- Bailarina, fuera de la tarjeta de confirmacion -->
+    <img class="rsvp-bailarina" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-bailarina.png" alt="" aria-hidden="true" width="295" height="374">
+
 
     <!-- Maripositas bajo el RSVP -->
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;padding:0 8px;">
