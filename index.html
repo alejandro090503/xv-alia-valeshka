@@ -264,11 +264,11 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .ft-c-tr{top:-11px;right:-11px;transform:scaleX(-1);}
 .ft-c-bl{bottom:-11px;left:-11px;transform:scaleY(-1);}
 .ft-c-br{bottom:-11px;right:-11px;transform:scale(-1,-1);}
-.ft-deco{position:absolute;pointer-events:none;z-index:2;height:auto;}
-.ft-deco-l{width:56px;left:-38px;bottom:14px;transform:rotate(-8deg);}
-.ft-deco-r{width:52px;right:-34px;bottom:36px;transform:rotate(9deg);}
-@media(min-width:420px){.ft-portrait{width:262px;}.ft-deco-l{width:64px;left:-46px;}.ft-deco-r{width:58px;right:-42px;}}
-@media(max-width:359px){.ft-deco-l{width:46px;left:-26px;}.ft-deco-r{width:44px;right:-24px;}}
+footer{position:relative;overflow:hidden;}
+.ft-deco{position:absolute;pointer-events:none;z-index:1;height:auto;opacity:.95;}
+.ft-deco-l{width:22vw;max-width:88px;left:2px;bottom:44px;transform:rotate(-6deg);}
+.ft-deco-r{width:20vw;max-width:80px;right:4px;bottom:34px;}
+@media(min-width:420px){.ft-portrait{width:262px;}.ft-deco-l{width:96px;max-width:96px;}.ft-deco-r{width:88px;max-width:88px;}}
 
 /* ── ENVELOPE ── */
 #envelope-screen{position:fixed;inset:0;z-index:10000;overflow:hidden;cursor:pointer;opacity:0;background:#FFF7E8;}
@@ -1201,11 +1201,12 @@ footer{padding:52px 20px 64px;text-align:center;}
 
   <!-- FOOTER -->
   <footer>
+    <img class="ft-deco ft-deco-l" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas-rosa.png" alt="" aria-hidden="true">
+    <img class="ft-deco ft-deco-r" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-bailarina.png" alt="" aria-hidden="true">
     <img class="ft-bow deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo.png" alt="" aria-hidden="true" width="244" height="207">
     <figure class="ft-portrait rv">
       <span class="ft-frame-glow" aria-hidden="true"></span>
-      <img class="ft-deco ft-deco-l" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas-rosa.png" alt="" aria-hidden="true">
-      <img class="ft-deco ft-deco-r" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo-rosa.png" alt="" aria-hidden="true">
+      
       <span class="ft-arch">
         <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/footer-alia-2.jpg" alt="Alia Valeshka en la barra de ballet" width="750" height="1000" loading="lazy">
       </span>
