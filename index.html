@@ -38,9 +38,9 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 /* ── HERO: foto de fondo ── */
 .hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 12%;z-index:0;}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(180deg,rgba(255,247,232,0.62) 0%,rgba(255,238,247,0.22) 12%,rgba(255,230,249,0.10) 24%,rgba(255,247,232,0.52) 36%,rgba(255,247,232,0.86) 48%,rgba(255,247,232,0.96) 62%,rgba(255,247,232,0.99) 78%,var(--bg) 100%);}
+  background:linear-gradient(180deg,rgba(255,247,232,0.55) 0%,rgba(255,238,247,0.16) 14%,rgba(255,230,249,0.06) 32%,rgba(255,247,232,0.24) 46%,rgba(255,247,232,0.62) 58%,rgba(255,247,232,0.90) 70%,rgba(255,247,232,0.98) 84%,var(--bg) 100%);}
 .hero-veil2{position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(ellipse 92% 46% at 50% 74%,rgba(255,247,232,0.74) 0%,transparent 72%);}
+  background:radial-gradient(ellipse 92% 40% at 50% 84%,rgba(255,247,232,0.62) 0%,transparent 74%);}
 .hero>*{position:relative;z-index:2;}
 .hero>.hero-photo{position:absolute;inset:0;z-index:0;}
 .hero>.hero-veil{position:absolute;inset:0;z-index:1;}
@@ -228,15 +228,15 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
   background:linear-gradient(to bottom,transparent,rgba(217,192,124,.6) 20%,rgba(217,192,124,.95) 50%,rgba(217,192,124,.6) 80%,transparent);
   filter:blur(3px);border-radius:6px;z-index:1;pointer-events:none;}
 .itv3-item{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
-  text-align:center;padding:26px 16px 6px;width:100%;}
+  text-align:center;padding:22px 16px 8px;width:100%;}
 .itv3-gem{width:9px;height:9px;background:linear-gradient(135deg,#EBDBAA 30%,#8F7434);
   transform:rotate(45deg);border-radius:2px;
   box-shadow:0 0 0 4px rgba(217,192,124,.16),0 0 18px rgba(217,192,124,.5);
   margin-bottom:20px;flex-shrink:0;}
 .itv3-time{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;
   letter-spacing:8px;color:var(--dark);line-height:1;margin-bottom:10px;text-indent:8px;}
-.itv3-ev{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;
-  color:var(--gold);letter-spacing:4px;text-transform:uppercase;line-height:1.5;text-indent:4px;}
+.itv3-ev{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;
+  color:var(--dark);letter-spacing:1.2px;line-height:1.4;}
 .itv3-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;font-weight:500;
   color:var(--text);line-height:1.5;margin-top:7px;}
 
@@ -245,7 +245,7 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .hero-deco-tl{width:104px;top:20px;left:14px;opacity:1;filter:drop-shadow(0 2px 7px rgba(184,140,150,.28));}
 .hero-deco-tr{width:84px;top:24px;right:16px;opacity:1;filter:drop-shadow(0 2px 7px rgba(184,140,150,.26));}
 .hero-bow-xv{width:62px;top:-26px;right:-34px;opacity:.95;}
-.msg-bow-top{width:104px;top:-30px;}
+.msg-bow-top{width:104px;top:-38px;z-index:4;}
 .buzon-bow-top{width:98px;top:-28px;}
 .rsvp-bow-grande{width:132px;}
 .ft-bow{width:96px;margin:0 auto 10px;}
@@ -268,9 +268,9 @@ body{font-family:'Montserrat',sans-serif;font-weight:500;color:#2D1B0E;backgroun
 .ft-c-bl{bottom:-11px;left:-11px;transform:scaleY(-1);}
 .ft-c-br{bottom:-11px;right:-11px;transform:scale(-1,-1);}
 footer{position:relative;overflow:hidden;}
-.ft-deco{position:absolute;pointer-events:none;z-index:1;height:auto;opacity:.95;}
-.ft-deco-l{width:20vw;max-width:82px;left:-4px;bottom:62px;transform:rotate(-6deg);}
-.ft-deco-r{width:19vw;max-width:78px;right:2px;bottom:52px;}
+.ft-deco{position:absolute;pointer-events:none;z-index:1;height:auto;opacity:.6;}
+.ft-deco-l{width:19vw;max-width:76px;left:-2px;bottom:14px;transform:rotate(-6deg);}
+.ft-deco-r{width:17vw;max-width:70px;right:2px;bottom:16px;}
 footer .ft-name,footer .ft-date,footer .ft-credit,footer .ft-portrait{position:relative;z-index:3;}
 @media(min-width:420px){.ft-portrait{width:262px;}.ft-deco-l{width:96px;max-width:96px;}.ft-deco-r{width:88px;max-width:88px;}}
 
@@ -375,8 +375,8 @@ section{padding:52px 28px;}
 .mf-br{bottom:3px;right:3px;transform:scale(-1,-1);}
 
 /* ── MENSAJE ── */
-.msg-outer{position:relative;padding:36px 20px 20px;margin-top:8px;}
-.msg-bow-top{position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:96px;}
+.msg-outer{position:relative;z-index:2;overflow:visible;padding:36px 20px 20px;margin-top:8px;}
+.msg-bow-top{position:absolute;top:-24px;left:50%;transform:translateX(-50%);width:96px;z-index:4;}
 .msg-frame{
   padding:32px 24px;text-align:center;
   overflow:visible;
@@ -486,7 +486,7 @@ section{padding:52px 28px;}
   border:1px solid rgba(255,36,175,0.22);
   border-radius:3px;pointer-events:none;z-index:0;
 }
-.buzon-icon-wrap{margin:20px 0 2px;position:relative;z-index:1;}
+.buzon-icon-wrap{margin:0 0 16px;position:relative;z-index:1;}
 .buzon-icon-wrap svg{width:78px;height:72px;}
 .buzon-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;line-height:1.85;color:var(--text);margin-bottom:0;position:relative;z-index:1;}
 
@@ -502,7 +502,7 @@ section{padding:52px 28px;}
   transform:rotate(12deg);
   filter:drop-shadow(0 4px 10px rgba(255,36,175,0.25));
 }
-.rsvp-bailarina{position:static;width:128px;height:auto;display:block;margin:26px auto 0;transform:none;pointer-events:none;filter:drop-shadow(0 8px 16px rgba(184,140,150,.24));animation:balletFloat 7.5s ease-in-out infinite;}
+.rsvp-bailarina{position:static;opacity:.62;width:112px;height:auto;display:block;margin:26px auto 0;transform:none;pointer-events:none;filter:drop-shadow(0 8px 16px rgba(184,140,150,.24));animation:balletFloat 7.5s ease-in-out infinite;}
 .rsvp-frame{
   border:1.5px solid rgba(184,144,106,0.55);
   border-radius:5px;padding:34px 22px 30px;
@@ -694,7 +694,7 @@ footer{padding:52px 20px 64px;text-align:center;}
     <div class="hero-veil2"></div>
     <div class="hero-curtain"></div>
     <!-- Disco ball -->
-    <img class="hero-deco-tl deco-img ballet-sway" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas.png" alt="" aria-hidden="true" width="243" height="365">
+    
     <!-- Cherries -->
     <img class="hero-deco-tr ballet-float deco-img" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-lazo.png" alt="" aria-hidden="true" width="244" height="207">
     <svg class="hero-sparkle-1" viewBox="0 0 24 24" fill="#D9C07C" aria-hidden="true"><path d="M12 1.5 C12.9 7.4 16.6 11.1 22.5 12 C16.6 12.9 12.9 16.6 12 22.5 C11.1 16.6 7.4 12.9 1.5 12 C7.4 11.1 11.1 7.4 12 1.5 Z"/></svg>
@@ -734,7 +734,7 @@ footer{padding:52px 20px 64px;text-align:center;}
     </div>
     <!-- Mariposita mensaje -->
     <div style="display:flex;justify-content:flex-end;margin-top:12px;padding-right:8px;">
-      <img class="punta punta-flip" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" width="75" >
+      <img class="punta punta-flip" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" style="opacity:.55;" width="55" >
     </div>
   </section>
 
@@ -884,7 +884,7 @@ footer{padding:52px 20px 64px;text-align:center;}
       <div class="ubic-tipo">Recepci&oacute;n</div>
       <div class="ubic-name">Estaca Lima Per&uacute; El Olivar</div>
       <div class="ubic-addr">Jr. Los &Aacute;lamos &amp; Casuarinas<br>Callao, Per&uacute;</div>
-      <div class="ubic-hora">7:00 p.m.</div>
+      <div class="ubic-hora">6:00 p.m.</div>
       <a class="btn-pink" href="https://maps.app.goo.gl/V5ACZrZ2XAmA7jHd8?g_st=ac" target="_blank">Ver Ubicaci&oacute;n</a>
     </div>
 
@@ -910,7 +910,7 @@ footer{padding:52px 20px 64px;text-align:center;}
       <div class="ubic-tipo">Cena y Fiesta</div>
       <div class="ubic-name">Fiesta de Gala</div>
       <div class="ubic-addr">En el sal&oacute;n de recepci&oacute;n<br>Estaca Lima Per&uacute; El Olivar</div>
-      <div class="ubic-hora">7:00 p.m.</div>
+      
     </div>
   </section>
 
@@ -928,9 +928,19 @@ footer{padding:52px 20px 64px;text-align:center;}
       <div class="itv3-glow" id="itvGlow"></div>
       <div class="itv3-item rv">
         <div class="itv3-gem"></div>
-        <div class="itv3-time">6:00</div>
-        <div class="itv3-ev">Recepci&oacute;n</div>
-        <div class="itv3-sub">Ingreso y bienvenida</div>
+        <div class="itv3-ev">Recepci&oacute;n y Bienvenida</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem"></div>
+        <div class="itv3-ev">Entrada de la quincea&ntilde;era</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem"></div>
+        <div class="itv3-ev">Baile sorpresa</div>
+      </div>
+      <div class="itv3-item rv">
+        <div class="itv3-gem"></div>
+        <div class="itv3-ev">Inicio de la fiesta</div>
       </div>
     </div>
   </section>
@@ -946,8 +956,8 @@ footer{padding:52px 20px 64px;text-align:center;}
     <h2 class="sec-title rv">C&oacute;digo de Vestimenta</h2>
     <!-- Maripositas arriba -->
     <div style="display:flex;justify-content:space-between;padding:0 12px;margin-bottom:8px;" class="rv">
-      <img class="punta" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" width="70" >
-      <img class="punta punta-2" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" width="62" >
+      <img class="punta" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" style="opacity:.55;" width="51" >
+      <img class="punta punta-2" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" style="opacity:.55;" width="45" >
     </div>
     <div class="dc-note rv">Formal</div>
     <div class="dc-cards rv">
@@ -1017,7 +1027,7 @@ footer{padding:52px 20px 64px;text-align:center;}
         <svg class="mf-corner mf-bl" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
         <svg class="mf-corner mf-br" viewBox="0 0 36 36" fill="none"><path d="M4,24 L4,4 L24,4" stroke="rgba(184,144,106,0.72)" stroke-width="1.6" stroke-linecap="round"/><circle cx="4" cy="4" r="2.8" fill="rgba(184,144,106,0.62)"/><path d="M10,4 Q10,10 4,10" stroke="rgba(184,144,106,0.42)" stroke-width="1" fill="none"/><circle cx="24" cy="4" r="1.6" fill="rgba(255,36,175,0.38)"/><circle cx="4" cy="24" r="1.6" fill="rgba(255,36,175,0.38)"/></svg>
         
-        <p class="buzon-text">Mi mayor ilusi&oacute;n es tenerte esa noche conmigo: tu presencia es, de verdad, el regalo m&aacute;s bonito.</p>
+        
         <div class="buzon-icon-wrap">
           <!-- Gift / money box icon -->
           <svg width="56" height="52" viewBox="0 0 56 52" fill="none">
@@ -1032,6 +1042,7 @@ footer{padding:52px 20px 64px;text-align:center;}
             <ellipse cx="26.5" cy="11.5" rx="1.5" ry="1" fill="rgba(255,255,255,0.38)"/>
           </svg>
         </div>
+        <p class="buzon-text">Mi mayor ilusi&oacute;n es tenerte esa noche conmigo: tu presencia es, de verdad, el regalo m&aacute;s bonito.</p>
       </div>
     </div>
   </section>
@@ -1114,8 +1125,8 @@ footer{padding:52px 20px 64px;text-align:center;}
 
     <!-- Maripositas bajo el RSVP -->
     <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;padding:0 8px;">
-      <img class="punta punta-3" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" width="64" >
-      <img class="punta punta-flip punta-2" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" width="56" >
+      <img class="punta punta-3" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" style="opacity:.55;" width="47" >
+      <img class="punta punta-flip punta-2" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-puntas.png" alt="" aria-hidden="true" style="opacity:.55;" width="41" >
     </div>
     <p class="rsvp-nokids rv">Por favor confirma antes del <strong>20 de septiembre de 2026</strong>.</p>
   </section>
@@ -1268,7 +1279,7 @@ function initSparkles(){
 
 /* ── COUNTDOWN ── */
 (function(){
-  var target=new Date('2026-10-08T19:00:00-05:00').getTime();
+  var target=new Date('2026-10-08T18:00:00-05:00').getTime();
   function tick(){
     var d=target-Date.now(); if(d<=0){d=0;}
     document.getElementById('cdD').textContent=String(Math.floor(d/86400000)).padStart(2,'0');
