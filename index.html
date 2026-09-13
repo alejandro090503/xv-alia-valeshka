@@ -1169,7 +1169,7 @@ footer{padding:52px 20px 64px;text-align:center;}
       <img class="punta punta-3" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas-colgando.png" alt="" aria-hidden="true" style="opacity:.55;" >
       <img class="punta punta-flip punta-2" src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/xv-alia-valeshka/deco-zapatillas-colgando.png" alt="" aria-hidden="true" style="opacity:.55;" >
     </div>
-    <p class="rsvp-nokids rv">Por favor confirma antes del <strong>20 de septiembre de 2026</strong>.</p>
+    <p class="rsvp-nokids rv">Por favor confirma antes del <strong>30 de septiembre de 2026</strong>.</p>
   </section>
 
   <!-- FOOTER -->
@@ -1405,8 +1405,8 @@ function initSparkles(){
 (function(){
   var PANEL_API='https://panel-invitados.vercel.app/api/confirmar';
   var RSVP_URL='https://xv-alia-valeshka.vercel.app';
-  /* Cierra al terminar el 20 de septiembre de 2026, hora de Lima. */
-  var DEADLINE=new Date('2026-09-21T00:00:00-05:00').getTime();
+  /* Cierra al terminar el 30 de septiembre de 2026, hora de Lima. */
+  var DEADLINE=new Date('2026-10-01T00:00:00-05:00').getTime();
   var frozen=Date.now()>DEADLINE;
 
   /* Personalizacion robusta: WhatsApp y Messenger cortan la URL en el primer
@@ -1561,7 +1561,7 @@ function initSparkles(){
     if(!frozen)return;
     btnYes.disabled=true;btnNo.disabled=true;btn.disabled=true;
     btnMenos.disabled=true;btnMas.disabled=true;editarBtn.disabled=true;
-    setFb('El periodo de confirmaci\u00f3n cerr\u00f3 el 20 de septiembre de 2026.','var(--gold)');
+    setFb('El periodo de confirmaci\u00f3n cerr\u00f3 el 30 de septiembre de 2026.','var(--gold)');
   }
 
   /* precarga */
