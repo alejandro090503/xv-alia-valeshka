@@ -537,7 +537,7 @@ section{padding:52px 28px;}
 .rsvp-fields input{margin-bottom:8px;}
 .rsvp-feedback{text-align:center;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;line-height:1.5;margin-top:14px;position:relative;z-index:1;}
 /* ── RSVP · contador de pases a ocupar ── */
-.pases-circles{flex-wrap:wrap;}
+.pases-numero{font-family:'Playfair Display',serif;font-weight:700;font-size:64px;line-height:1;color:var(--pink);text-align:center;margin:2px 0 12px;position:relative;z-index:1;text-shadow:0 4px 14px rgba(255,36,175,0.22);}
 .rsvp-contador-nota{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;font-weight:600;line-height:1.55;color:var(--text);margin:14px auto 12px;max-width:340px;position:relative;z-index:1;}
 .rsvp-contador{display:flex;align-items:center;justify-content:center;gap:18px;margin:0 auto 8px;padding:12px 18px;background:var(--pink-pale);border:1px solid var(--border-pink);border-radius:6px;position:relative;z-index:1;}
 .rsvp-contador-btn{width:46px;height:46px;flex-shrink:0;border-radius:50%;border:1.5px solid rgba(255,36,175,0.40);background:#fff;
@@ -1125,7 +1125,7 @@ footer{padding:52px 20px 64px;text-align:center;}
           <div class="pases-card">
             <div class="pases-title">Pases</div>
             <div class="pases-sub">Hemos reservado</div>
-            <div class="pases-circles" id="pasesCircles"></div>
+            <div class="pases-numero" id="pasesNumero">1</div>
             <div class="pases-honor">Asientos en tu honor</div>
           </div>
         </div>
@@ -1440,7 +1440,7 @@ function initSparkles(){
 
   var holaEl=document.getElementById('rsvpHola');
   var pasesWrap=document.getElementById('pasesWrap');
-  var circles=document.getElementById('pasesCircles');
+  var numeroEl=document.getElementById('pasesNumero');
   var bandeja=document.getElementById('rsvpBandeja');
   var gracias=document.getElementById('rsvpGracias');
   var gTitle=document.getElementById('rsvpGraciasTitle');
@@ -1466,13 +1466,8 @@ function initSparkles(){
   /* Saludo y tarjeta de pases: solo con link personalizado. */
   function pintaPases(){
     if(urlPara)holaEl.textContent='\u00a1Hola, '+urlPara+'!';
-    circles.innerHTML='';
     if(!urlPara){pasesWrap.style.display='none';return;}
-    for(var i=1;i<=pasesAsignados;i++){
-      var c=document.createElement('div');
-      c.className='pases-circle active';
-      circles.appendChild(c);
-    }
+    numeroEl.textContent=pasesAsignados;
     pasesWrap.style.display='block';
   }
   pintaPases();
